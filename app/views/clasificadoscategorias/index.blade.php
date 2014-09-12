@@ -32,10 +32,10 @@
 
 
 
-												<?php
 
-											foreach ($clasificadoscategorias as $clasificadoscategoria)
-												{ ?>
+
+											@foreach ($clasificadoscategorias as $clasificadoscategoria)
+
 
 
 
@@ -67,9 +67,7 @@
 
 
 
-											<?
-													}
-											?>
+											@endforeach
 
 
 
