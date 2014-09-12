@@ -81,7 +81,7 @@
 				<!-- End portfolio gallery -->
 				@endforeach
 			</div>
-
+		</div>
 
 
 
