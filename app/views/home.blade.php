@@ -3,8 +3,6 @@
 
 
 
-<?php if (count($articulos_tapa)) { ?>
-
 	<!-- Title bar -->
 	<div class="pi-section-w pi-section-base pi-section-base-gradient">
 		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
@@ -19,6 +17,8 @@
 	</div>
 	<!-- End title bar -->
 
+<?php if (count($articulos_tapa)) { ?>
+<?php } ?>
 
 
 
@@ -196,7 +196,5 @@
 	</div>
 </div>
 </div>
-
-<?php } ?>
 
 @stop
