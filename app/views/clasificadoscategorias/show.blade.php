@@ -4,9 +4,6 @@
 <link rel="stylesheet" type="text/css" href="/css/tables.css"/>
 
 
-
-
-
 			<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
 			<div class="pi-section-w pi-section-white">
@@ -15,11 +12,8 @@
 			<div class="pi-text-center pi-margin-bottom-50">
 				<h1 class="pi-uppercase pi-weight-700 pi-has-border pi-has-tall-border pi-has-short-border">
 					<?php
-
 						$clasificadoscategoria = Clasificadoscategoria::find($clasificadoscategorias_id);
-
 						echo $clasificadoscategoria->clasificadoscategoria;
-
 					?>
 
 				</h1>
@@ -31,7 +25,7 @@
 
 			</div>
 
-<?php if (count($clasificados)>0 )  { ?>
+@if (count($clasificados)>0 )
 
 <!-- Table -->
 <div class="pi-responsive-table-sm">
@@ -65,10 +59,10 @@
 
 
 
-												<?php
 
-											foreach ($clasificados as $clasificado)
-												{
+
+											@foreach ($clasificados as $clasificado)
+												<?php
 
 
 													$archivo = DB::table('archivos')
@@ -86,18 +80,13 @@
 							<tr>
 								<td>
 
-								<?php
 
-										if (count($archivo)) { ?>
+
+										@if (count($archivo))
 
 											<img src="/uploads/crop/{{ $archivo->archivo }}" alt="" />
 
-											<?php
-										}
-
-
-								?>
-
+										@endif
 								</td>
 								<td align="left">
 										{{ $clasificado->clasificado }}
@@ -117,9 +106,7 @@
 							<!-- End table row -->
 
 
-											<?
-													}
-											?>
+											@endforeach
 
 
 
@@ -156,18 +143,12 @@
 
 
 
-		<?php
-	} else {
-		?>
-
+@else
 		<h3 class="text-center-xs">
 					No hay clasificados cargados en esta categoria
 		</h3>
 
-<?php
-		}
-?>
-
+@endif
 
 
 </div>
