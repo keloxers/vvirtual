@@ -97,7 +97,12 @@
 									</div>
 									<!-- End table -->
 
-									{{ $articulos->links()}}
+									<div class="pi-pagenav pi-text-center">
+										{{ $articulos->links()}}
+									</div>
+
+
+
 
 							</footer>
 						</section>
