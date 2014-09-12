@@ -18,9 +18,6 @@
 			?>
 			@if ($imagen[0]<>"")
 			<!-- Title bar -->
-			<div class="pi-section-w pi-section-base pi-section-base-gradient">
-				<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
-				<div class="pi-section" style="padding: 16px 40px 16px;">
 
 					<div class="pi-row">
 						<div class="pi-section-w pi-center-text-xs pi-text-center">
@@ -29,8 +26,6 @@
 						</div>
 					</div>
 
-				</div>
-			</div>
 			<!-- End title bar -->
 			@endif
 		</div>
