@@ -19,7 +19,7 @@ class ArticulosController extends BaseController {
 
 				$articulos = DB::table('articulos')
 													->where('estado', '=', 'publicado')
-													->orderBy('id', 'desc')->paginate(10);
+													->orderBy('id', 'desc')->paginate(16);
 
 				$articulos_masvistos = DB::table('articulos')
 													->where('estado', '=', 'publicado')
