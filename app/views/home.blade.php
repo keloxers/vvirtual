@@ -80,10 +80,11 @@
 			</div>
 			<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 		</div>
+		<?php } ?>
 		<!-- End portfolio gallery -->
 	</div>
 
-	
+
 
 
 
