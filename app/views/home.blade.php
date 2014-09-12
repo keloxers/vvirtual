@@ -34,5 +34,6 @@
 		</div>
 	</div>
 
+<?php } ?>
 
-	@stop
+@stop
