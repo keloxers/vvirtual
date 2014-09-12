@@ -129,7 +129,7 @@
 
 									if (preg_match('/^.{1,260}\b/s', $articulo->texto, $match))
 									{ $texto = $match[0]; }
-									$categoria = Categoria::find($articulo->categorias_id);
+										$categoria = Categoria::find($articulo->categorias_id);
 									?>
 
 									<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
@@ -192,7 +192,7 @@
 
 											</div>
 
-
+								<? } ?>			
 											{{ $articulos->links()}}
 
 
