@@ -40,7 +40,7 @@ class ArticulosController extends BaseController {
 public function ver()
 {
 
-			$articulos = DB::table('articulos')->orderBy('id', 'desc')->paginate(30);
+			$articulos = DB::table('articulos')->orderBy('id', 'desc')->paginate(10);
 			$title = "Articulos";
 			return View::make('articulos.ver', array('title' => $title, 'articulos' => $articulos));
 

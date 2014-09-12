@@ -25,11 +25,6 @@
 	<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 		<div class="pi-section-w pi-section-white piCaptions">
 
-
-
-
-
-
 			<?php
 			$banner = new Banner();
 			$imagen = $banner->imprimir('homebig');
