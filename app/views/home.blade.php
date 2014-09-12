@@ -129,7 +129,8 @@
 	<div class="pi-section-w pi-section-white">
 		<div class="pi-section">
 			<div class="pi-row pi-padding-bottom-10 isotope" data-isotope-mode="masonry">
-				<?php foreach ($articulos as $articulo) {
+				@foreach ($articulos as $articulo)
+				<?php
 					$texto = $articulo->texto;
 					$archivos = DB::table('archivos')
 					->where('padre', '=', 'articulo')
@@ -193,7 +194,7 @@
 
 								<? } ?>
 
-								<? } ?>
+								@endforeach
 
 
 
@@ -235,8 +236,8 @@
 								<div class="pi-row">
 
 
-
-									<?php foreach ($articulos_masvistos as $articulo) {
+									@foreach ($articulos_masvistos as $articulo)
+									<?php
 										$texto = $articulo->texto;
 										$archivos = DB::table('archivos')
 										->where('padre', '=', 'articulo')
@@ -281,14 +282,14 @@
 											<!-- End col 4 -->
 
 
-											<? } ?>
+											@endforeach
 										</div>
 										<!-- End row -->
 									</div>
 								</div>
 							</div>
 
-							
+
 
 
 
