@@ -22,10 +22,6 @@
 
 
 	<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
-
-
-		<!-- - - - - - - - - - SECTION - - - - - - - - - -->
-
 		<div class="pi-section-w pi-section-white piCaptions">
 
 			<!-- Portfolio gallery -->
@@ -37,15 +33,17 @@
 				<div class="pi-section-w pi-section-white">
 					<div id="isotope" class="pi-row pi-grid-no-margins pi-padding-bottom-20 isotope" data-isotope-mode="masonry">
 
-						<?php foreach ($articulos_tapa as $articulo) {
+						<?php
+						foreach ($articulos_tapa as $articulo) {
 							$texto = $articulo->texto;
 							$archivos = DB::table('archivos')
 							->where('padre', '=', 'articulo')
 							->where('padre_id', '=', $articulo->id)
 							->first();
 
-							if (preg_match('/^.{1,260}\b/s', $articulo->texto, $match))
-							{ $texto = $match[0]; }
+							if (preg_match('/^.{1,260}\b/s', $articulo->texto, $match)) {
+								$texto = $match[0];
+							}
 							$categoria = Categoria::find($articulo->categorias_id);
 							?>
 
@@ -83,12 +81,12 @@
 					<!-- End portfolio gallery -->
 					<? } ?>
 				</div>
-				<?php } ?>
+
 
 
 			</div>
 		</div>
 	</div>
 
-	<?php } ?>
+
 	@stop
