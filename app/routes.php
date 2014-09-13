@@ -61,12 +61,15 @@ Route::get( '/', array(
 
 Route::get('/pages/{url_seo}', 'PagesController@show');
 
+
+
 # Standard User Routes
 Route::group(['before' => 'auth|standardUser'], function()
 {
 
 		Route::resource('contactos', 'ContactosController');
 		Route::get('/contactos/{id}/delete', 'ContactosController@destroy');
+
 
 
 		Route::get('/articulos/ver', 'ArticulosController@ver');
@@ -83,7 +86,7 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 		Route::resource('articulos', 'ArticulosController');
 
-		Route::resource('clasificados', 'ClasificadosController');
+
 
 		Route::resource('ofertas', 'OfertasController');
 
@@ -93,8 +96,27 @@ Route::group(['before' => 'auth|standardUser'], function()
 		Route::resource('banners', 'BannersController');
 		Route::get('/banners/{id}/delete', 'BannersController@destroy');
 
+		Route::get('/clasificados/{id}/delete', 'ClasificadosController@destroy');
+		Route::get('/clasificados/{id}/publicar', 'ClasificadosController@publicar');
+		Route::get('/clasificados/{id}/espera', 'ClasificadosController@espera');
+		Route::get('/clasificados', 'ClasificadosController@index');
+
 
 });
+
+
+
+// Route::resource('clasificados', 'ClasificadosController');
+
+Route::get( '/clasificados/create', array(
+		'as' => 'clasificados.create',
+		'uses' => 'ClasificadosController@create'
+) );
+
+Route::post( '/clasificados/store', array(
+		'as' => 'clasificados.store',
+		'uses' => 'ClasificadosController@store'
+) );
 
 
 Route::get('/articulos/show/{url_seo}', 'ArticulosController@show');

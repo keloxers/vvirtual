@@ -12,15 +12,13 @@ class ClasificadosController extends BaseController {
 	{
 
 
-				$clasificadoscategorias = DB::table('clasificadoscategorias')
-													->where('activo', '=', 1)
-													->orderBy('clasificadoscategoria', 'asc')->get();
+				$clasificados = DB::table('clasificados')
+													->orderBy('id', 'dec')
+													->paginate(10);
 
-				return View::make('clasificadoscategorias.index', array('clasificadoscategorias' => $clasificadoscategorias));
+				return View::make('clasificados.index', array('clasificados' => $clasificados));
 
 	}
-
-
 
 
 	/**
@@ -63,12 +61,14 @@ class ClasificadosController extends BaseController {
 
 		$clasificado = new Clasificado;
 
-		$clasificado->users_id = Sentry::getUser()->id;
+		//$clasificado->users_id = Sentry::getUser()->id;
+		$clasificado->users_id = 1;
 		$clasificado->operacion = Input::get('operacion');
 		$clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
 		$clasificado->clasificado = Input::get('clasificado');
 		$clasificado->precio = Input::get('precio');
 		$clasificado->telefono = Input::get('telefono');
+		$clasificado->estado = 'espera';
 		$url_seo = Input::get('clasificado');
 		$url_seo = $this->url_slug($url_seo) . date('ljSFY');
 
@@ -120,7 +120,7 @@ class ClasificadosController extends BaseController {
 
 
 
-		// return Redirect::to('/clasificados/ver');
+		return Redirect::to('/clasificadoscategorias/' . Input::get('clasificadoscategorias_id') );
 
 	}
 
@@ -223,12 +223,13 @@ class ClasificadosController extends BaseController {
 	 */
 	public function destroy($id)
 	{
+
 		$input = Input::all();
 
 
-		$articulo = Articulo::find($id)->delete();
+		$clasificado = Clasificado::find($id)->delete();
 
-		return Redirect::to('/articulos');
+		return Redirect::to('/clasificados');
 	}
 
 
@@ -241,50 +242,29 @@ class ClasificadosController extends BaseController {
 public function publicar($id)
 {
 
-	$articulo = Articulo::find($id);
-	$articulo->estado = 'publicado';
-	$articulo->save();
+	$clasificado = Clasificado::find($id);
+	$clasificado->estado = 'publicado';
+	$clasificado->save();
 
-	return Redirect::to('/articulos/ver');
+	return Redirect::to('/clasificados');
 }
 
 
+/**
+* Remove the specified resource from storage.
+*
+* @param  int  $id
+* @return Response
+*/
+public function espera($id)
+{
 
+	$clasificado = Clasificado::find($id);
+	$clasificado->estado = 'espera';
+	$clasificado->save();
 
-    public function search(){
-
-        $term = Input::get('term');
-
-        $articulos = DB::table('articulos')->where('articulo', 'like', '%' . $term . '%')->get();
-
-        $adevol = array();
-
-        if (count($articulos) > 0) {
-
-            foreach ($articulos as $articulo)
-                {
-                	$precio_sin_iva = $articulo->precio_publico / (($articulo->iva / 100) + 1);
-
-                    $adevol[] = array(
-                        'id' => $articulo->id,
-                        'value' => $articulo->articulo,
-                        'precio' => $precio_sin_iva,
-                        'iva' => $articulo->iva,
-                    );
-            }
-        } else {
-                    $adevol[] = array(
-                        'id' => 0,
-                        'value' => 'no hay coincidencias para: ' .  $term,
-                        'precio' => 0,
-                        'iva' => 0,
-                    );
-        }
-
-        return json_encode($adevol);
-
-
-    }
+	return Redirect::to('/clasificados');
+}
 
 
 

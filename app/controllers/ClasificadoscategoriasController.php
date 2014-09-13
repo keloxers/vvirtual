@@ -15,7 +15,8 @@ class ClasificadoscategoriasController extends BaseController {
 
 				$clasificadoscategorias = DB::table('clasificadoscategorias')
 													->where('activo', '=', 1)
-													->orderBy('clasificadoscategoria', 'asc')->get();
+													->orderBy('clasificadoscategoria', 'asc')
+													->paginate(20);
 
 				return View::make('clasificadoscategorias.index', array('clasificadoscategorias' => $clasificadoscategorias));
 
@@ -117,6 +118,7 @@ public function ver()
 
 			$clasificados = DB::table('clasificados')
 				->where('clasificadoscategorias_id', '=', $id)
+				->where('estado', '=', 'publicado')
 				->paginate(10);
 
 			// show the view and pass the nerd to it
