@@ -32,16 +32,20 @@
 
 													<!-- Table row -->
 													<tr>
-														<th style="width: 25%;">
+														<th>
 															Titular
 														</th>
-														<th style="width: 40%;">
+														<th>
 															Copete
 														</th>
-														<th style="width: 10%;">
+														<th>
+															Tipo
+														</th>
+														<th>
 															Estado
 														</th>
-														<th style="width: 20%;">
+
+														<th>
 															Accion
 														</th>
 													</tr>
@@ -70,6 +74,7 @@
 														echo "<tr>";
 												    echo "<td>" . $articulo->articulo . "</td>";
 												    echo "<td>" . $texto . "</td>";
+														echo "<td>" . $articulo->tipo . "</td>";
 												    echo "<td>" . $articulo->estado . "</td>";
 														echo "<td>" ;
 
