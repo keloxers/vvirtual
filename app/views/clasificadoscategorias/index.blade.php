@@ -72,7 +72,8 @@
 
 																	<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="{{$total}}" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
 
-																	<h4><div class="pi-counter-number">0</div></h4>
+
+																	<span class="pi-counter-number">0</span> Clasificados
 
 
 																	</div>
