@@ -130,6 +130,10 @@
 
 
 
+				<div class="pi-pagenav pi-text-center">
+					{{ $articulos->links()}}
+				</div>
+
 
 
 				</div>
@@ -140,9 +144,6 @@
 			</div>
 		</div>
 
-		<div class="pi-pagenav pi-text-center">
-			{{ $articulos->links()}}
-		</div>
 
 
 
