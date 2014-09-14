@@ -28,7 +28,7 @@
 	<div class="pi-section-w pi-section-parallax piCounter piTabs piTooltips" style="background-image: url('/uploads/big/{{ $archivos->archivo }}');">
 		<div class="pi-texture" style="background: rgba(24, 28, 32, 0.8);"></div>
 		<div class="pi-section pi-padding-top-100 pi-padding-bottom-80 pi-text-center">
-			<br><br>
+			<br><br><br><br>
 			<h2 class="h1 pi-text-shadow pi-has-border pi-has-tall-border pi-has-base-border pi-has-short-border" style="font-size: 40px;">
 				{{ $articulo_tapa->articulo }}
 			</h2>
