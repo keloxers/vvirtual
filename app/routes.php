@@ -118,6 +118,11 @@ Route::post( '/clasificados/store', array(
 		'uses' => 'ClasificadosController@store'
 ) );
 
+Route::get( '/clasificados/{id}', array(
+		'as' => 'clasificados.show',
+		'uses' => 'ClasificadosController@show'
+) );
+
 
 Route::get('/articulos/show/{url_seo}', 'ArticulosController@show');
 Route::get('/articulo/{url_seo}', 'ArticulosController@show');

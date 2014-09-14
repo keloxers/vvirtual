@@ -104,6 +104,7 @@
 						</div>
 					</div>
 
+					<hr class="pi-divider">
 
 					<?php
 					$banner = new Banner();
@@ -122,6 +123,7 @@
 						</div>
 					</div>
 					@endif
+
 
 
 

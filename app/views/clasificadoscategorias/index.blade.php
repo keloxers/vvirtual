@@ -10,6 +10,13 @@
 			<div class="pi-section-w pi-section-white">
 			<div class="pi-section">
 
+
+			@if(Session::has('success'))
+			    <div class="alert-box success">
+			        <h2>{{ Session::get('success') }}</h2>
+			    </div>
+			@endif
+
 			<div class="pi-text-center pi-margin-bottom-50">
 				<h1 class="pi-uppercase pi-weight-700 pi-has-border pi-has-tall-border pi-has-short-border">
 					Clasificados

@@ -75,6 +75,7 @@
 						<b>Categoria: </b>{{$clasificadoscategoria->clasificadoscategoria}}<br><br>
 						<b>Fecha : </b>{{$clasificado->created_at}}<br><br>
 						<b>Visitas : </b>{{$clasificado->visitas}}<br>
+						<b>Email : </b>{{$clasificado->email}}<br>
 						<b>Telefono : </b>{{$clasificado->telefono}}<br>
 					</h5>
 					<br><br>
