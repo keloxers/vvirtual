@@ -9,18 +9,16 @@
 
 <?php
 
-$archivos = DB::table('archivos')
-->where('padre', '=', 'articulo')
-->where('padre_id', '=', $articulo_tapa->id)
-->first();
+	$archivos = DB::table('archivos')
+	->where('padre', '=', 'articulo')
+	->where('padre_id', '=', $articulo_tapa->id)
+	->first();
 
-if (preg_match('/^.{1,160}\b/s', $articulo_tapa->copete, $match))
-{
-	$texto = $match[0] . " ...";
-}
-$categoria = Categoria::find($articulo_tapa->categorias_id);
-?>
-
+	if (preg_match('/^.{1,160}\b/s', $articulo_tapa->copete, $match))
+	{
+		$texto = $match[0] . " ...";
+	}
+	$categoria = Categoria::find($articulo_tapa->categorias_id);
 ?>
 
 
