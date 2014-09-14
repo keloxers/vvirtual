@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="/css/counters.css"/>
+
 
 <?php if (count($clasificadoscategorias)>0 )  { ?>
 
@@ -44,7 +46,13 @@
 											@foreach ($clasificadoscategorias as $clasificadoscategoria)
 
 
+											<?php
 
+														$total = DB::table('clasificados')
+														->where('clasificadoscategorias_id','=',$clasificadoscategoria->id)
+														->count();
+
+											?>
 
 
 															<!-- echo "<a href='/articulos/" . $articulo->id . "/edit' class='btn btn-xs btn-primary'>Editar</a> "; -->
@@ -59,6 +67,18 @@
 																<img src="/img/glyphicons/png/{{ $clasificadoscategoria->icon }}" alt="" />
 														</a>
 													</div>
+
+													<!-- Counters item -->
+
+																	<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="{{$total}}" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
+
+																	<h3><div class="pi-counter-number">0</div></h3> clasificados cargados
+
+
+																	</div>
+
+																<!-- End counters item -->
+
 
 													<h5><a href='/clasificadoscategorias/{{ $clasificadoscategoria->id }}' class='pi-link-dark'>{{$clasificadoscategoria->clasificadoscategoria}}</a></h5>
 
@@ -92,5 +112,12 @@
 						}
 		?>
 
+
+
+<script src="/3dParty/jquery-1.11.0.min.js"></script>
+<script src="/scripts/pi.easings.js"></script>
+<script src="/3dParty/inview.js"></script>
+<script src="/scripts/pi.counter.js"></script>
+<script src="/scripts/pi.init.counter.js"></script>
 
 @stop
