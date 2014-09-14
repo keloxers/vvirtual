@@ -29,7 +29,7 @@ $archivos = DB::table('archivos')
 						{{ $articulo_tapa->articulo }}
 					</h2>
 
-					<p class="lead-18 pi-weight-300 pi-margin-bottom-30 pi-p-half">
+					<p class="lead-18 pi-weight-200 pi-margin-bottom-30 pi-p-half">
 						{{ $articulo_tapa->copete }}
 					</p>
 
