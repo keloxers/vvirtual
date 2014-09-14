@@ -142,13 +142,34 @@
 
 		</div>
 
-		<div class="pi-pagenav pi-text-center">
-			{{ $articulos->links()}}
-		</div>
-
 	</div>
 
 
+<footer class="panel-footer">
+
+	<div class="row">
+		<div class="col-sm-4 hidden-xs">
+			<!-- <select class="input-sm form-control input-s-sm inline">
+				<option value="0">Bulk action</option>
+				<option value="1">Delete selected</option>
+				<option value="2">Bulk edit</option>
+				<option value="3">Export</option>
+			</select> -->
+		</div>
+		<div class="col-sm-4 text-center">
+			<!-- <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small> -->
+		</div>
+		<div class="col-sm-4 text-right text-center-xs">
+
+		<div class="pi-pagenav pi-text-center">
+				{{ $articulos->links()}}
+		</div>
+
+
+		</div>
+	</div>
+
+</footer>
 
 
 
