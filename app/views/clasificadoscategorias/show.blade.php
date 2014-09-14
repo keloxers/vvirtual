@@ -134,7 +134,10 @@
 		</div>
 		<div class="col-sm-4 text-right text-center-xs">
 
-		{{ $clasificados->links()}}
+		<div class="pi-pagenav pi-text-center">
+				{{ $clasificados->links()}}
+		</div>
+
 
 		</div>
 	</div>
