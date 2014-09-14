@@ -127,7 +127,8 @@ public function ver()
 
 		$articulo = Articulo::find($id);
 
-		$articulo->visitas++;
+		$valor=rand(1, 3);
+		$articulo->visitas = $articulo->visitas + $valor;
 		$articulo->save();
 		$categoria = Categoria::find($articulo->categorias_id);
 
