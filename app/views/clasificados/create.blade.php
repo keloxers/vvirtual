@@ -133,6 +133,29 @@
 						</div>
 						<!-- End first name form -->
 
+						<!-- First name form -->
+						<div class="form-group">
+							<label for="titular">Email contacto</label>
+
+							<div class="pi-input-with-icon">
+								<div class="pi-input-icon"><i class="icon-pencil"></i></div>
+								{{ Form::text('email', '', array('class' => 'form-control', 'id' => 'email', 'placeholder' => 'Ingrese un email valido')) }}
+
+							<?php if ($errors->first('email')) { ?>
+									<div class="pi-alert-danger fade in">
+										<button type="button" class="pi-close" data-dismiss="alert">
+											<i class="icon-cancel"></i>
+										</button>
+										<p>
+											<strong>Oh !</strong> {{ $errors->first('email') }}.
+										</p>
+									</div>
+							<?php } ?>
+
+							</div>
+						</div>
+						<!-- End first name form -->
+
 
 
 					<hr class="pi-divider-gap-10">

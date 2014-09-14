@@ -12,10 +12,11 @@ class ArticulosController extends BaseController {
 	{
 
 
-        $articulos_tapa = DB::table('articulos')
+        $articulo_tapa = DB::table('articulos')
 													->where('estado', '=', 'publicado')
 													->where('tipo', '=', 'principal')
-													->orderBy('id', 'desc')->paginate(3);
+													->orderBy('id', 'desc')
+													->first();
 
 				$articulos = DB::table('articulos')
 													->where('estado', '=', 'publicado')
@@ -27,7 +28,7 @@ class ArticulosController extends BaseController {
 													->orderBy('created_at', 'desc')
 													->paginate(4);
 
-        return View::make('home', array('articulos_tapa' => $articulos_tapa, 'articulos' => $articulos, 'articulos_masvistos' => $articulos_masvistos));
+        return View::make('home', array('articulo_tapa' => $articulo_tapa, 'articulos' => $articulos, 'articulos_masvistos' => $articulos_masvistos));
 
 	}
 

@@ -69,7 +69,7 @@
 					<div class="form-group">
 						<label for="exampleInputMessage-3">Tipo</label>
 
-							{{ Form::select('tipo', array('principal' => 'Principal', 'secundaria' => 'Secundaria'), 'principal', array('class' => 'form-control input-lg', 'id' =>'tipo')) }}
+							{{ Form::select('tipo', array('principal' => 'Principal', 'secundaria' => 'Secundaria'), 'secundaria', array('class' => 'form-control input-lg', 'id' =>'tipo')) }}
 
 					</div>
 					<!-- End message form -->
