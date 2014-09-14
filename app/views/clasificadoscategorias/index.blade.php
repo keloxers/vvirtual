@@ -72,7 +72,7 @@
 
 																	<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="{{$total}}" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
 
-																	<h3><div class="pi-counter-number">0</div></h3> clasificados cargados
+																	<h4><div class="pi-counter-number">0</div></h4>
 
 
 																	</div>

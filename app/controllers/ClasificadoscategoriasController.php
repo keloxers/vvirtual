@@ -16,7 +16,7 @@ class ClasificadoscategoriasController extends BaseController {
 				$clasificadoscategorias = DB::table('clasificadoscategorias')
 													->where('activo', '=', 1)
 													->orderBy('clasificadoscategoria', 'asc')
-													->paginate(20);
+													->get();
 
 				return View::make('clasificadoscategorias.index', array('clasificadoscategorias' => $clasificadoscategorias));
 
