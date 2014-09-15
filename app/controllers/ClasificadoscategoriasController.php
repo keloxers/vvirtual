@@ -119,6 +119,7 @@ public function ver()
 			$clasificados = DB::table('clasificados')
 				->where('clasificadoscategorias_id', '=', $id)
 				->where('estado', '=', 'publicado')
+				->orderBy('id', 'desc')
 				->paginate(10);
 
 			// show the view and pass the nerd to it
