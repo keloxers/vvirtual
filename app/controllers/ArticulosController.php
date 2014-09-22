@@ -28,7 +28,17 @@ class ArticulosController extends BaseController {
 													->orderBy('created_at', 'desc')
 													->paginate(4);
 
-        return View::make('home', array('articulo_tapa' => $articulo_tapa, 'articulos' => $articulos, 'articulos_masvistos' => $articulos_masvistos));
+				$banners_smalls = DB::table('banners')
+										->where('posicion', '=', 'homesmall')
+										->get();
+
+
+        return View::make('home', array('articulo_tapa' => $articulo_tapa,
+																				'articulos' => $articulos,
+																				'articulos_masvistos' => $articulos_masvistos,
+																				'banners_smalls' => $banners_smalls
+
+																				));
 
 	}
 

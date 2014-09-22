@@ -26,7 +26,7 @@
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
 	<div class="pi-section-w pi-section-parallax piCounter piTabs piTooltips" style="background-image: url('/uploads/big/{{ $archivos->archivo }}');">
-		<div class="pi-texture" style="background: rgba(24, 28, 32, 0.4);"></div>
+		<div class="pi-texture" style="background: rgba(24, 28, 32, 0.8);"></div>
 		<div class="pi-section pi-padding-top-100 pi-padding-bottom-40 pi-text-center">
 
 			<h2 class="h1 pi-text-shadow pi-has-border pi-has-tall-border pi-has-base-border pi-has-short-border" style="font-size: 40px;">
@@ -156,7 +156,34 @@
 					</div>
 				</div>
 
+
+				<?php
+				$banner = new Banner();
+				$imagen = $banner->imprimir('homesmall');
+				?>
+				@if ($imagen[0]<>"")
+
+
+				<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
+					<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
+						@if ($imagen[1]<>"")
+						<a href="{{$imagen[1]}}">
+							@endif
+							<img src="{{$imagen[0]}}" alt="">
+						</a>
+					</div>
+				</div>
+				@endif
+
+
+
+
 				@endforeach
+
+
+
+
+
 
 			</div>
 
@@ -177,45 +204,6 @@
 
 
 
-
-
-
-
-
-
-
-<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
-	<div class="pi-section-w pi-section-white">
-		<div class="pi-section">
-			<div class="pi-row pi-padding-bottom-10 isotope" data-isotope-mode="masonry">
-				@foreach ($banners_smalls as $banners_small)
-
-
-						<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
-							<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-								@if ($banners_small->link <> "")
-										<a href="{{ $banners_small->link }}">
-								@endif
-
-
-								<img src="/publicidades/{{ $banners_small->file }}" alt="">
-
-
-								@if ($banners_small->link <> "")
-									</a>
-								@endif
-
-
-							</div>
-						</div>
-
-
-				@endforeach
-
-			</div>
-		</div>
-	</div>
-</div>
 
 
 
