@@ -2,6 +2,35 @@
 
 @section('content')
 
+
+
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+	<div class="pi-section-w pi-section-white">
+
+		<?php
+		$banner = new Banner();
+		$imagen = $banner->imprimir('articulobig');
+
+		?>
+		@if ($imagen[0]<>"")
+		<!-- Title bar -->
+
+		<div class="pi-row">
+			<div class="pi-section-w pi-center-text-xs pi-text-center">
+
+				<a href="{{$imagen[1]}}"><img src="{{$imagen[0]}}" alt=""></a>
+			</div>
+		</div>
+
+		<!-- End title bar -->
+		@endif
+	</div>
+</div>
+<br>
+
+
+
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
 
