@@ -9,11 +9,11 @@
 	<div class="pi-section-w pi-section-white">
 
 		<?php
-		$banner = new Banner();
-		$imagen = $banner->imprimir('articulobig');
-
+			$banner = new Banner();
+			$imagen = $banner->imprimir('articulobig');
 		?>
 		@if ($imagen[0]<>"")
+
 		<!-- Title bar -->
 
 		<div class="pi-row">

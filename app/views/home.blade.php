@@ -57,9 +57,6 @@
 
 
 <br>
-
-
-
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 	<div class="pi-section-w pi-section-white">
 
@@ -216,6 +213,46 @@
 		</div>
 	</div>
 </div>
+
+
+
+<br>
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+	<!-- Title bar -->
+	<div class="pi-section-w pi-section-base pi-section-base-gradient">
+		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+		<div class="pi-section" style="padding: 15px 40px 12px;">
+
+			<div class="pi-row">
+				<div class="pi-col-sm-8 pi-center-text-xs">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Pronostico del tiempo</h1>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- End title bar -->
+
+
+	<div class="pi-section-w pi-section-white">
+
+		<div class="pi-row">
+			<div class="pi-section-w pi-center-text-xs pi-text-center">
+				<br>
+				<div align="center" >
+					<div id="cont_16c6d6472b04ecc46ddb420b74655790">
+					<span id="h_16c6d6472b04ecc46ddb420b74655790"><a id="a_16c6d6472b04ecc46ddb420b74655790" href="http://www.tiempo.com/" target="_blank" style="color:#656565;font-family:Arial;font-size:14px;">Predicci&oacute;n 14 d&iacute;as</a></span>
+					<script type="text/javascript" src="http://www.tiempo.com/wid_loader/16c6d6472b04ecc46ddb420b74655790"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+
+
 
 
 
