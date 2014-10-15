@@ -44,7 +44,7 @@
 	 data-start="2400"
 	 data-easing="Back.easeInOut"
 	 data-endspeed="300"
-	 style="z-index: 5; font-size: 34px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.9); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
+	 style="z-index: 5; font-size: 34px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.5); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
 	 {{ $articulo_tapa->articulo }}
 </div>
 
@@ -56,7 +56,7 @@
 	 data-start="2600"
 	 data-easing="Back.easeInOut"
 	 data-endspeed="300"
-	 style="z-index: 6; font-size: 20px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.8); padding: 12px 16px; border-radius: 3px;">
+	 style="z-index: 6; font-size: 20px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.6); padding: 12px 16px; border-radius: 3px;">
 	 {{ $texto }} <a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
 		Leer
 	</a>
