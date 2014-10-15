@@ -14,7 +14,7 @@
 	->where('padre_id', '=', $articulo_tapa->id)
 	->first();
 
-	if (preg_match('/^.{1,160}\b/s', $articulo_tapa->copete, $match))
+	if (preg_match('/^.{1,220}\b/s', $articulo_tapa->copete, $match))
 	{
 		$texto = $match[0] . " ...";
 	}
