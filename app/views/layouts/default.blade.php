@@ -18,7 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/alert-boxes.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/animations.css"/>
 	<link rel="stylesheet" type="text/css" href="/3dParty/colorbox/colorbox.css"/>
-
+	<link rel="stylesheet" type="text/css" href="/3dParty/rs-plugin/css/pi.settings.css"/>
 
 	<!--Fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'
@@ -475,6 +475,16 @@
 <script src="/scripts/pi.scrollTopArrow.js"></script>
 <script src="/3dParty/tweetie/tweetie.min.js"></script>
 <script src="/scripts/pi.init.tweetie.js"></script>
+
+
+<script src="/scripts/pi.parallax.js"></script>
+<script src="/scripts/pi.init.parallax.js"></script>
+<script src="/3dParty/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script src="/3dParty/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="/scripts/pi.init.revolutionSlider.js"></script>
+
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

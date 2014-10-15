@@ -26,7 +26,7 @@
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
 	<div class="pi-section-w pi-section-parallax piCounter piTabs piTooltips" style="background-image: url('/uploads/big/{{ $archivos->archivo }}');">
-		<div class="pi-texture" style="background: rgba(24, 28, 32, 0.8);"></div>
+		<div class="pi-texture" style="background: rgba(24, 28, 32, 0.4);"></div>
 		<div class="pi-section pi-padding-top-100 pi-padding-bottom-40 pi-text-center">
 
 			<h2 class="h1 pi-text-shadow pi-has-border pi-has-tall-border pi-has-base-border pi-has-short-border" style="font-size: 40px;">
@@ -57,9 +57,6 @@
 
 
 <br>
-
-
-
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 	<div class="pi-section-w pi-section-white">
 
@@ -156,34 +153,7 @@
 					</div>
 				</div>
 
-
-				<?php
-				$banner = new Banner();
-				$imagen = $banner->imprimir('homesmall');
-				?>
-				@if ($imagen[0]<>"")
-
-
-				<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
-					<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-						@if ($imagen[1]<>"")
-						<a href="{{$imagen[1]}}">
-							@endif
-							<img src="{{$imagen[0]}}" alt="">
-						</a>
-					</div>
-				</div>
-				@endif
-
-
-
-
 				@endforeach
-
-
-
-
-
 
 			</div>
 
@@ -202,6 +172,85 @@
 
 
 
+
+
+
+
+
+
+
+
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+	<div class="pi-section-w pi-section-white">
+		<div class="pi-section">
+			<div class="pi-row pi-padding-bottom-10 isotope" data-isotope-mode="masonry">
+				@foreach ($banners_smalls as $banners_small)
+
+
+						<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
+							<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
+								@if ($banners_small->link <> "")
+										<a href="{{ $banners_small->link }}">
+								@endif
+
+
+								<img src="/publicidades/{{ $banners_small->file }}" alt="">
+
+
+								@if ($banners_small->link <> "")
+									</a>
+								@endif
+
+
+							</div>
+						</div>
+
+
+				@endforeach
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<br>
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+	<!-- Title bar -->
+	<div class="pi-section-w pi-section-base pi-section-base-gradient">
+		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+		<div class="pi-section" style="padding: 15px 40px 12px;">
+
+			<div class="pi-row">
+				<div class="pi-col-sm-8 pi-center-text-xs">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Pronostico del tiempo</h1>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- End title bar -->
+
+
+	<div class="pi-section-w pi-section-white">
+
+		<div class="pi-row">
+			<div class="pi-section-w pi-center-text-xs pi-text-center">
+				<br>
+				<div align="center" >
+					<div id="cont_16c6d6472b04ecc46ddb420b74655790">
+					<span id="h_16c6d6472b04ecc46ddb420b74655790"><a id="a_16c6d6472b04ecc46ddb420b74655790" href="http://www.tiempo.com/" target="_blank" style="color:#656565;font-family:Arial;font-size:14px;">Predicci&oacute;n 14 d&iacute;as</a></span>
+					<script type="text/javascript" src="http://www.tiempo.com/wid_loader/16c6d6472b04ecc46ddb420b74655790"></script>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
 
 
 
