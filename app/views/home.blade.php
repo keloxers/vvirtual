@@ -158,16 +158,8 @@
 					<div class="pi-portfolio-item pi-portfolio-item-round-corners">
 						@if (count($archivos)>0 )
 						<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-							<a href="/uploads/big/{{ $archivos->archivo }}" class="pi-colorbox cboxElement">
+							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}">
 								<img src="/uploads/big/{{ $archivos->archivo }}" alt="">
-
-								<div class="pi-img-overlay pi-no-padding pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-icon-dark pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
 							</a>
 						</div>
 						@endif
@@ -181,7 +173,7 @@
 							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
 							</h2>
 							<p>{{ $texto }}...</p>
-							<b>{{ $articulo->visitas }} visitas </b> 
+							<b>{{ $articulo->visitas }} visitas </b>
 							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
 							Leer
 						  </a>
