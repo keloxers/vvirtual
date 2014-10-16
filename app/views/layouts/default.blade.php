@@ -19,6 +19,9 @@
 	<link rel="stylesheet" type="text/css" href="/css/animations.css"/>
 	<link rel="stylesheet" type="text/css" href="/3dParty/colorbox/colorbox.css"/>
 	<link rel="stylesheet" type="text/css" href="/3dParty/rs-plugin/css/pi.settings.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/boxes.css"/>
+
+
 
 	<!--Fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'

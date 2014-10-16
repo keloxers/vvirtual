@@ -173,13 +173,18 @@
 							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
 							</h2>
 							<p>{{ $texto }}...</p>
-							<b>{{ $articulo->visitas }} visitas </b>
 							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
 							Leer
-						  </a>
+						</a><br>
+							<b>{{ $articulo->visitas }} visitas</b>
+
 						</div>
 					</div>
+					<hr class="pi-divider pi-divider-dashed pi-divider-big">
+
 				</div>
+
+
 
 				@endforeach
 
