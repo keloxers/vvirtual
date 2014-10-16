@@ -174,7 +174,6 @@
 						<div class="pi-portfolio-description pi-portfolio-description-round-corners-all" style="border-top-width: 1px;">
 							<ul class="pi-portfolio-cats">
 								<li><i class="icon-clock"></i>{{ $articulo->created_at }}</li>
-								<li><i class="icon-eye"></i>{{ $articulo->visitas }} visitas</li>
 								@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
 								<li><a href="/articulos/{{$articulo->id}}/edit">Editar</a></li>
 								@endif
@@ -182,6 +181,10 @@
 							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
 							</h2>
 							<p>{{ $texto }}...</p>
+							<b>{{ $articulo->visitas }} visitas </b> 
+							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
+							Leer
+						  </a>
 						</div>
 					</div>
 				</div>
