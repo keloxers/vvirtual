@@ -158,7 +158,7 @@
 					<div class="pi-portfolio-item pi-portfolio-item-round-corners">
 						@if (count($archivos)>0 )
 						<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}">
+							<a href="/articulos/show/{{ $articulo->url_seo }}">
 								<img src="/uploads/big/{{ $archivos->archivo }}" alt="">
 							</a>
 						</div>
