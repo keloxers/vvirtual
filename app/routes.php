@@ -179,12 +179,18 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 				$result  = array();
 				foreach ($articulos as $articulo) {
+
+							$archivos = DB::table('archivos')
+																->where('articulos_id', '=', $articulo->id)
+																->first();
+
 		    			$result[] = array(
 							    "id_articulo" => $articulo->id,
 							    "fecha" => $articulo->created_at,
 							    "title" => $articulo->articulo,
 									"copete" => $articulo->copete,
-							    "visitas" => $articulo->visitas
+							    "visitas" => $articulo->visitas,
+									"file_name" => $archivos->archivo
 							);
 				};
 
