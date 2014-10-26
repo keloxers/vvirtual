@@ -181,7 +181,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				foreach ($articulos as $articulo) {
 
 							$archivos = DB::table('archivos')
-																->where('articulos_id', '=', $articulo->id)
+																->where('padre_id', '=', $articulo->id)
+																->where('padre', '=', 'articulo')
 																->first();
 
 		    			$result[] = array(
