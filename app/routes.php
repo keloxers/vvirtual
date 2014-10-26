@@ -134,3 +134,65 @@ Route::get('/', array('as' => 'home', 'uses' => 'ArticulosController@index'));
 
 
 Route::resource('clasificadoscategorias', 'ClasificadoscategoriasController');
+
+
+
+
+
+
+Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
+
+    Route::get('/polls/{page}', function ($page) {
+        return Response::json(['status' => 200,'polls' => Poll::skip(($page - 1) * 5)
+                ->take(5)
+                ->get(['id', 'question'])->toArray()
+        ]);
+    });
+
+    Route::get('/poll/{id}', function ($id) {
+        $poll = Poll::find($id);
+        //out going format: {"status":200,"poll":{"id":"1","question":"What is your preferred framework for 2014 ?","options":["Laravel","PhalconPHP","CakePHP"]}}
+        return Response::json(['status' => 200, 'poll' => $poll->toArray()]);
+    });
+
+    Route::post('/poll/{id}/option', function ($id) {
+        $option = Input::get('option');
+        $poll = Poll::find($id);
+        $options = implode(',', $poll->options);
+        $rules = [
+            'option' => 'in:' . $options,
+        ];
+        $valid = Validator::make(compact('option'), $rules);
+        if ($valid->passes()) {
+            $poll->stats()->where('option','=',$option)->increment('vote_count');
+            return Response::json(['status' => 200, 'mesg' => 'saved successfully!']);
+        } else
+            return Response::json(['status' => 400, 'mesg' => 'option not allowed!'],400);
+
+    });
+
+    Route::get('/noticias', function () {
+
+				$articulos = DB::table('articulos')
+													->where('estado', '=', 'publicado')
+													->orderBy('id', 'desc')->paginate(10);
+
+				$result  = array();
+				foreach ($articulos as $articulo) {
+		    			$result[] = array(
+							    "id_articulo" => $articulo->id,
+							    "fecha" => $articulo->created_at,
+							    "title" => $articulo->articulo,
+									"copete" => $articulo->copete,
+							    "visitas" => $articulo->visitas
+							);
+				};
+
+				header('HTTP/1.1 200 OK');
+				header('Content-type: text/html');
+
+				echo json_encode($result);
+
+        return;
+    });
+});
