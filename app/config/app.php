@@ -112,7 +112,7 @@ return array(
 				'Way\Generators\GeneratorsServiceProvider',
 				'Intervention\Image\ImageServiceProvider',
 				'Thujohn\Twitter\TwitterServiceProvider',
-
+				
 	),
 
 	/*
