@@ -217,7 +217,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 																		->first();
 
 						$clasificadoscategorias = DB::table('clasificadoscategorias')
-															->where('clasificadoscategorias_id', '=', $clasificado->clasificadoscategorias_id)
+															->where('id', '=', $clasificado->clasificadoscategorias_id)
 															->first();
 
 									$result[] = array(
