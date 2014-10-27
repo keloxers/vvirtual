@@ -42,6 +42,7 @@ Route::get('users/{id}/ban', 'UserController@ban')->where('id', '[0-9]+');
 Route::get('users/{id}/unban', 'UserController@unban')->where('id', '[0-9]+');
 Route::resource('users', 'UserController');
 
+
 // Group Routes
 Route::resource('groups', 'GroupController');
 
@@ -199,7 +200,37 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				header('Content-type: text/html');
 
 				echo json_encode($result);
-
         return;
     });
+				Route::get('/clasificados', function () {
+
+						$clasificados = DB::table('clasificados')
+															->where('estado', '=', 'publicado')
+															->orderBy('id', 'desc')->paginate(20);
+
+						$result  = array();
+						foreach ($clasificados as $clasificado) {
+
+									$archivos = DB::table('archivos')
+																		->where('padre_id', '=', $clasificado->id)
+																		->where('padre', '=', 'clasificado')
+																		->first();
+
+									$result[] = array(
+											"id_clasificado" => $clasificado->id,
+											"fecha" => $clasificado->created_at,
+											"oferta" => $clasificado->operacion,
+											"clasificado" => $clasificado->clasificado,
+											"precio" => $clasificado->precio,
+											"email" => $clasificado->email, "telefono" => $clasificado->telefono
+									);
+						};
+
+						header('HTTP/1.1 200 OK');
+						header('Content-type: text/html');
+
+						echo json_encode($result);
+						return;
+				});
+
 });
