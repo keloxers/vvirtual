@@ -111,8 +111,8 @@ return array(
 				'Authority\Service\Form\FormServiceProvider',
 				'Way\Generators\GeneratorsServiceProvider',
 				'Intervention\Image\ImageServiceProvider',
-				'Thujohn\Twitter\TwitterServiceProvider',
 				
+
 	),
 
 	/*
@@ -180,7 +180,7 @@ return array(
         'View' 			=> 'Illuminate\Support\Facades\View',
 				'Sentry'		=> 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 				'Image' => 'Intervention\Image\Facades\Image',
-    		'Twitter' => 'Thujohn\Twitter\TwitterFacade',
+
 
 	),
 
