@@ -223,8 +223,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 									$result[] = array(
 											"id_clasificado" => $clasificado->id,
 											"fecha" => $clasificado->created_at,
-											"oferta" => $clasificado->operacion,
-											"clasificado" => $clasificado->clasificado,
+											"operacion" => $clasificado->operacion,
+											"oferta" => $clasificado->clasificado,
 											"precio" => $clasificado->precio,
 											"email" => $clasificado->email,
 											"telefono" => $clasificado->telefono,
