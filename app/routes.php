@@ -242,8 +242,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				});
 
 
-				Route::get('/twitters', function () {
-						return Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json'));
-				});
+				// Route::get('/twitters', function () {
+				// 		return Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json'));
+				// });
 
 });
