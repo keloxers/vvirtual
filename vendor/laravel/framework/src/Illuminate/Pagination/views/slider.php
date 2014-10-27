@@ -3,7 +3,7 @@
 ?>
 
 <?php if ($paginator->getLastPage() > 1): ?>
-	<div class="pi-pagenav pi-padding-bottom-20">
+	<div class="pagination">
 		<ul>
 			<?php echo $presenter->render(); ?>
 		</ul>

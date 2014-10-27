@@ -2,8 +2,8 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"cartalyst/sentry": "~2.1",
-		"tecnick.com/tcpdf": "dev-master",
-		"intervention/image": "1.*"
+		"intervention/image": "1.*",
+		"thujohn/twitter": "dev-master"
 
 	},
 	"require-dev": {

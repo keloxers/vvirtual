@@ -106,11 +106,12 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Cartalyst\Sentry\SentryServiceProvider',
-		'Authority\Repo\RepoServiceProvider',
-		'Authority\Service\Form\FormServiceProvider',
-		'Way\Generators\GeneratorsServiceProvider',
-		'Intervention\Image\ImageServiceProvider',
+				'Cartalyst\Sentry\SentryServiceProvider',
+				'Authority\Repo\RepoServiceProvider',
+				'Authority\Service\Form\FormServiceProvider',
+				'Way\Generators\GeneratorsServiceProvider',
+				'Intervention\Image\ImageServiceProvider',
+				'Thujohn\Twitter\TwitterServiceProvider',
 
 	),
 
@@ -179,6 +180,7 @@ return array(
         'View' 			=> 'Illuminate\Support\Facades\View',
 				'Sentry'		=> 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 				'Image' => 'Intervention\Image\Facades\Image',
+    		'Twitter' => 'Thujohn\Twitter\TwitterFacade',
 
 	),
 

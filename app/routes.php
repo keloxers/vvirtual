@@ -202,6 +202,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				echo json_encode($result);
         return;
     });
+
+
 				Route::get('/clasificados', function () {
 
 						$clasificados = DB::table('clasificados')
@@ -237,6 +239,11 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 						echo json_encode($result);
 						return;
+				});
+
+
+				Route::get('/twitters', function () {
+						return Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json'));
 				});
 
 });
