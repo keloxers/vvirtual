@@ -221,7 +221,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 									"title" => $articulo->articulo,
 									"copete" => $articulo->copete,
 									"visitas" => $articulo->visitas,
-									"file_name" => $archivos->archivo
+									"file_name" => $archivo->archivo
 							);
 
 
