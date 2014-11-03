@@ -187,8 +187,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 																->first();
 
 							$file_name = "";
-							if ($archivo) {
-								$file_name = $archivo->archivo;
+							if ($archivos) {
+								$file_name = $archivos->archivo;
 							}
 
 		    			$result[] = array(
