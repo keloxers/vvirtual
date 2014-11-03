@@ -281,8 +281,43 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				});
 
 
-				// Route::get('/twitters', function () {
-				// 		return Twitter::getHomeTimeline(array('count' => 20, 'format' => 'json'));
-				// });
+
+				Route::post('/clasificados', function () {
+
+						// $clasificados = DB::table('clasificados')
+						// 									->where('estado', '=', 'publicado')
+						// 									->orderBy('id', 'desc')->paginate(20);
+						//
+						// $result  = array();
+						// foreach ($clasificados as $clasificado) {
+						//
+						// 			$archivos = DB::table('archivos')
+						// 												->where('padre_id', '=', $clasificado->id)
+						// 												->where('padre', '=', 'clasificado')
+						// 												->first();
+						//
+						// $clasificadoscategorias = DB::table('clasificadoscategorias')
+						// 									->where('id', '=', $clasificado->clasificadoscategorias_id)
+						// 									->first();
+						//
+						// 			$result[] = array(
+						// 					"id_clasificado" => $clasificado->id,
+						// 					"fecha" => $clasificado->created_at,
+						// 					"operacion" => $clasificado->operacion,
+						// 					"oferta" => $clasificado->clasificado,
+						// 					"precio" => $clasificado->precio,
+						// 					"email" => $clasificado->email,
+						// 					"telefono" => $clasificado->telefono,
+						// 					"categoria" => $clasificadoscategorias->clasificadoscategoria
+						// 			);
+						// };
+
+						header('HTTP/1.1 200 OK');
+						header('Content-type: text/html');
+
+						echo json_encode($result);
+						return;
+				});
+
 
 });
