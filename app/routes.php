@@ -204,6 +204,36 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
     });
 
 
+		Route::get('/noticias/{id}', function () {
+
+				$articulo = DB::table('articulos')
+													->where('id', '=', $id)
+													->first();
+
+				$archivo = DB::table('archivos')
+													->where('padre_id', '=', $articulo->id)
+													->where('padre', '=', 'articulo')
+													->first();
+
+							$result[] = array(
+									"id_articulo" => $articulo->id,
+									"fecha" => $articulo->created_at,
+									"title" => $articulo->articulo,
+									"copete" => $articulo->copete,
+									"visitas" => $articulo->visitas,
+									"file_name" => $archivos->archivo
+							);
+
+
+				header('HTTP/1.1 200 OK');
+				header('Content-type: text/html');
+
+				echo json_encode($result);
+				return;
+		});
+
+
+
 				Route::get('/clasificados', function () {
 
 						$clasificados = DB::table('clasificados')
