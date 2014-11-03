@@ -209,7 +209,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
     });
 
 
-		Route::get('/noticias/{id}', function () {
+		Route::get('/noticias/{id}', function ($id) {
 
 				$articulo = DB::table('articulos')
 													->where('id', '=', $id)
