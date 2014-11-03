@@ -186,6 +186,11 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 																->where('padre', '=', 'articulo')
 																->first();
 
+							$file_name = "";
+							if ($archivo) {
+								$file_name = $archivo->archivo;
+							}
+
 		    			$result[] = array(
 							    "id_articulo" => $articulo->id,
 							    "fecha" => $articulo->created_at,
@@ -214,6 +219,10 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 													->where('padre_id', '=', $articulo->id)
 													->where('padre', '=', 'articulo')
 													->first();
+				$file_name = "";
+				if ($archivo) {
+					$file_name = $archivo->archivo;
+				}
 
 							$result[] = array(
 									"id_articulo" => $articulo->id,
@@ -221,7 +230,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 									"title" => $articulo->articulo,
 									"copete" => $articulo->copete,
 									"visitas" => $articulo->visitas,
-									"file_name" => $archivo->archivo
+									"file_name" => $file_name
 							);
 
 
