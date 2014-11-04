@@ -282,7 +282,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 
 
-				Route::post('/clasificados', function () {
+				Route::post('/enviarclasificado', function () {
 
 						// $clasificados = DB::table('clasificados')
 						// 									->where('estado', '=', 'publicado')
