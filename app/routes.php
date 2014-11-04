@@ -315,8 +315,8 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 						header('HTTP/1.1 200 OK');
 						header('Content-type: text/html');
 
-						echo json_encode($result);
-						return;
+						// echo json_encode($result);
+						return true;
 				});
 
 
