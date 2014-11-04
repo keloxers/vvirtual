@@ -284,38 +284,56 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 				Route::post('/enviarclasificado', function () {
 
-						// $clasificados = DB::table('clasificados')
-						// 									->where('estado', '=', 'publicado')
-						// 									->orderBy('id', 'desc')->paginate(20);
-						//
-						// $result  = array();
-						// foreach ($clasificados as $clasificado) {
-						//
-						// 			$archivos = DB::table('archivos')
-						// 												->where('padre_id', '=', $clasificado->id)
-						// 												->where('padre', '=', 'clasificado')
-						// 												->first();
-						//
-						// $clasificadoscategorias = DB::table('clasificadoscategorias')
-						// 									->where('id', '=', $clasificado->clasificadoscategorias_id)
-						// 									->first();
-						//
-						// 			$result[] = array(
-						// 					"id_clasificado" => $clasificado->id,
-						// 					"fecha" => $clasificado->created_at,
-						// 					"operacion" => $clasificado->operacion,
-						// 					"oferta" => $clasificado->clasificado,
-						// 					"precio" => $clasificado->precio,
-						// 					"email" => $clasificado->email,
-						// 					"telefono" => $clasificado->telefono,
-						// 					"categoria" => $clasificadoscategorias->clasificadoscategoria
-						// 			);
-						// };
+
+					$result = var_dump(Input::All());
+					
+// // die;
+// //
+//
+// // 'categorias_id' => 'exists:rubros,id'
+//
+// $rules = [
+// 	'clasificado' => 'required',
+// 	'precio' => 'required',
+// 	'telefono' => 'required',
+// ];
+//
+//
+// if (! Clasificado::isValid(Input::all(),$rules)) {
+//
+// 	return Redirect::back()->withInput()->withErrors(Clasificado::$errors);
+//
+// }
+//
+// $clasificado = new Clasificado;
+//
+// //$clasificado->users_id = Sentry::getUser()->id;
+// $clasificado->users_id = 1;
+// $clasificado->operacion = Input::get('operacion');
+// $clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
+// $clasificado->clasificado = Input::get('clasificado');
+// $clasificado->precio = Input::get('precio');
+// $clasificado->telefono = Input::get('telefono');
+// $clasificado->email = Input::get('email');
+// $clasificado->estado = 'espera';
+// $url_seo = Input::get('clasificado');
+// $url_seo = $this->url_slug($url_seo) . date('ljSFY');
+//
+// $clasificado->url_seo = $url_seo;
+//
+// $clasificado->save();
+//
+//
+// 						$clasificados = DB::table('clasificados')
+// 															->where('estado', '=', 'publicado')
+// 															->orderBy('id', 'desc')->paginate(20);
+//
+//
 
 						header('HTTP/1.1 200 OK');
 						header('Content-type: text/html');
 
-						// echo json_encode($result);
+						echo json_encode($result);
 						return;
 				});
 
