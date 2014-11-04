@@ -58,6 +58,7 @@
 		<!-- Radio
 		<div class="pi-header-block pi-header-block-txt">
 				// <audio controls autoplay="autoplay"><source src="http://208.68.36.162:8000/live" type="audio/mp3">Your browser does not support the audio element.</audio>
+				<i class="pi-header-block-icon icon-email pi-icon-base pi-icon-square"></i><strong>redaccion@virasorovirtual.com</strong>
 		</div>
 		    End radio -->
 
