@@ -316,7 +316,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 						header('Content-type: text/html');
 
 						// echo json_encode($result);
-						return true;
+						return;
 				});
 
 
