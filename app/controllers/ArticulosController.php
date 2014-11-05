@@ -33,10 +33,16 @@ class ArticulosController extends BaseController {
 										->get();
 
 
+				$clasificados = DB::table('clasificados')
+													->where('estado', '=', 'publicado')
+													->orderBy('id', 'desc')->paginate(4);
+
+
         return View::make('home', array('articulo_tapa' => $articulo_tapa,
 																				'articulos' => $articulos,
 																				'articulos_masvistos' => $articulos_masvistos,
-																				'banners_smalls' => $banners_smalls
+																				'banners_smalls' => $banners_smalls,
+																				'clasificados' => $clasificados
 
 																				));
 

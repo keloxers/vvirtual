@@ -20,6 +20,8 @@
 	<link rel="stylesheet" type="text/css" href="/3dParty/colorbox/colorbox.css"/>
 	<link rel="stylesheet" type="text/css" href="/3dParty/rs-plugin/css/pi.settings.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/boxes.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/pricing-tables.css"/>
+
 
 
 
@@ -58,7 +60,7 @@
 		<!-- Radio
 		<div class="pi-header-block pi-header-block-txt">
 				// <audio controls autoplay="autoplay"><source src="http://208.68.36.162:8000/live" type="audio/mp3">Your browser does not support the audio element.</audio>
-				
+
 		</div>
 		    End radio -->
 

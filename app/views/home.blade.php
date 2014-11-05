@@ -73,13 +73,6 @@
 </div>
 </div>
 
-<span class="revolution-slider"></span>
-
-<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
-
-
-
-
 
 
 
@@ -115,24 +108,111 @@
 <br>
 
 
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
-<!-- Title bar -->
-<div class="pi-section-w pi-section-base pi-section-base-gradient">
-	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
-	<div class="pi-section" style="padding: 15px 40px 12px;">
+	<!-- Title bar -->
+	<div class="pi-section-w pi-section-base pi-section-base-gradient">
+		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+		<div class="pi-section" style="padding: 15px 40px 12px;">
 
-		<div class="pi-row">
-			<div class="pi-col-sm-8 pi-center-text-xs">
-				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Noticias de tapa</h1>
+			<div class="pi-row">
+				<div class="pi-col-sm-8 pi-center-text-xs">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Clasificados</h1>
+				</div>
 			</div>
+
 		</div>
 	</div>
+	<!-- End title bar -->
+
+
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+<div class="pi-section-w pi-section-white piTooltips">
+	<div class="pi-section pi-padding-bottom-80">
+
+		<div class="pi-row pi-grid-small-margins">
+
+@foreach ($clasificados as $clasificado)
+
+<?php
+				if (preg_match('/^.{1,60}\b/s', $clasificado->clasificado, $match))
+				{
+					$clasi = $match[0] . " ...";
+				}
+
+?>
+
+			<div class="pi-col-md-3 pi-col-xs-6">
+				<table class="pi-pricing">
+					<thead>
+					<tr>
+						<td class="pi-pricing-head-purple pi-text-center">
+							<span class="pi-pricing-title">
+								<a href="/clasificados/{{ $clasificado->id }}">
+									{{ $clasificado->operacion }}
+								</a>
+								</span>
+
+							<div class="pi-pricing-price">
+								<span class="pi-pricing-currency">$</span>
+								<span class="pi-pricing-amount">{{ $clasificado->precio }}</span>
+								<span class="pi-pricing-period">.00</span>
+							</div>
+							<p class="pi-italic">
+								<a href="/clasificados/{{ $clasificado->id }}">
+										{{ $clasi }}
+								</a>
+							</p>
+						</td>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+
+<?php
+					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
+?>
+
+						<td>
+							<strong>
+								<a href="/clasificadoscategorias/{{ $clasificadoscategorias->id }}">
+									{{ $clasificadoscategorias->clasificadoscategoria}}
+								</a>
+							</strong></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
+
+@endforeach
+
+
+		</div>
+
+	</div>
 </div>
-<!-- End title bar -->
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
 
 
 
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
+	<!-- Title bar -->
+	<div class="pi-section-w pi-section-base pi-section-base-gradient">
+		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+		<div class="pi-section" style="padding: 15px 40px 12px;">
+
+			<div class="pi-row">
+				<div class="pi-col-sm-8 pi-center-text-xs">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Noticias</h1>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- End title bar -->
 
 
 
