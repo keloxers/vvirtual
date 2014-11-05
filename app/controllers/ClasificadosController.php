@@ -67,6 +67,13 @@ class ClasificadosController extends BaseController {
 		$clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
 		$clasificado->clasificado = Input::get('clasificado');
 		$clasificado->precio = Input::get('precio');
+
+		if (is_numeric ($clasificado->precio)) {
+
+		} else {
+			$clasificado->precio = 0;
+		}
+
 		$clasificado->telefono = Input::get('telefono');
 		$clasificado->email = Input::get('email');
 		$clasificado->estado = 'espera';
