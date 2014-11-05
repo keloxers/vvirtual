@@ -35,6 +35,7 @@ class ArticulosController extends BaseController {
 
 				$clasificados = DB::table('clasificados')
 													->where('estado', '=', 'publicado')
+													->where('precio', '>', 0)
 													->orderBy('id', 'desc')->paginate(4);
 
 
