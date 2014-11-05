@@ -37,7 +37,11 @@
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 
+<?php
 
+	$user = Sentry::findUserById(1);
+
+?>
 
 <!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
@@ -75,7 +79,7 @@
 				</h2>
 
 				<ul class="pi-meta">
-					<li><i class="icon-user"></i>Subido por: <a href="#">{{$articulo->users_id}}</a></li>
+					<li><i class="icon-user"></i>Subido por: {{$user->last_name}}, {{$user->first_name}}</li>
 					<li><i class="icon-clock"></i>{{$articulo->created_at}}</li>
 					<li><i class="icon-comment"></i><a href="#">{{$categoria->categoria}}</a></li>
 					@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
