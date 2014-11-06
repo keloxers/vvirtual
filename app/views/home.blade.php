@@ -253,7 +253,7 @@
 							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
 							</h2>
 							<p>{{ $texto }}...</p>
-							<a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
+							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-base pi-btn-small">
 							Leer
 						</a><br>
 							<b>{{ $articulo->visitas }} visitas</b>
