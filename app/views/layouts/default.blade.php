@@ -159,6 +159,7 @@
 		<li><a href="/clasificados"><span>Clasificados</span></a></li>
 		<li><a href="/contactos"><span>Contactos</span></a></li>
     <li><a href="/pages"><span>Paginas</span></a></li>
+		<li><a href="/turnos"><span>Turnos</span></a></li>
 	</ul>
 
 </li>

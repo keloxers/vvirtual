@@ -74,7 +74,6 @@
 					</div>
 					<!-- End message form -->
 
-
 					<!-- Message -->
 					<div class="form-group">
 						<label for="exampleInputMessage-3">Categoria</label>
@@ -94,7 +93,6 @@
 
 					</div>
 					<!-- End message form -->
-
 
 					<hr class="pi-divider-gap-10">
 

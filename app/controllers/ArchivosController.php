@@ -65,17 +65,7 @@ class ArchivosController extends BaseController {
 	    }
 
 
-return Redirect::to('/articulos/ver');
-
-
-
-
-
-
-
-
-
-
+		return Redirect::to('/articulos/ver');
 
 
 }

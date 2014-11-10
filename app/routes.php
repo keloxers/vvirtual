@@ -12,6 +12,11 @@
 */
 App::setLocale('es');
 
+// $fecha=date("d-m-Y H:i:s e");
+// echo "hoy es el día: ";
+// echo $fecha;
+// die;
+
 // Session Routes
 Route::get('login',  array('as' => 'login', 'uses' => 'SessionController@create'));
 Route::get('logout', array('as' => 'logout', 'uses' => 'SessionController@destroy'));
@@ -87,6 +92,8 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 		Route::resource('articulos', 'ArticulosController');
 
+		Route::resource('turnos', 'TurnosController');
+		Route::get('/turnos/{id}/delete', 'TurnosController@destroy');
 
 
 		Route::resource('ofertas', 'OfertasController');
@@ -286,7 +293,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 
 					$result = var_dump(Input::All());
-					
+
 // // die;
 // //
 //
