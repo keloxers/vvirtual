@@ -14,7 +14,7 @@ class TurnosController extends BaseController {
 
 		$turnos = DB::table('turnos')
 		->orderBy('fecha', 'dec')
-		->paginate(10);
+		->paginate(20);
 
 		return View::make('turnos.index', array('turnos' => $turnos));
 

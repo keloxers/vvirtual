@@ -12,10 +12,6 @@
 */
 App::setLocale('es');
 
-// $fecha=date("d-m-Y H:i:s e");
-// echo "hoy es el día: ";
-// echo $fecha;
-// die;
 
 // Session Routes
 Route::get('login',  array('as' => 'login', 'uses' => 'SessionController@create'));
