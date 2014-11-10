@@ -10,6 +10,7 @@
 		<div class="pi-section-w pi-section-white">
 			<div class="pi-section">
 
+				<a href='/turnos/create' class='btn pi-btn-base pi-btn-small'>Nuevo turno</a><br>
 
 				<hr class="pi-divider-gap-70">
 
