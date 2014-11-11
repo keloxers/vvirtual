@@ -296,9 +296,9 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 						foreach ($turnos as $turno) {
 
 									$result[] = array(
-											"fecha" => date("d", strtotime($turno->fecha)) . "/" .
-																	date("m", strtotime($turno->fecha)) . "/" .
-																	date("Y", strtotime($turno->fecha)) 
+											"fecha" => date("d", strtotime($turno->fecha)) . "-" .
+																	date("m", strtotime($turno->fecha)) . "-" .
+																	date("Y", strtotime($turno->fecha))
 											,
 											"turno" => $turno->turno
 									);
