@@ -290,7 +290,7 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 						$turnos = DB::table('turnos')
 															->where('fecha', '>=', $fecha)
-															->orderBy('fecha', 'asc')->paginate(2);
+															->orderBy('fecha', 'asc')->paginate(3);
 
 						$result  = array();
 						foreach ($turnos as $turno) {
