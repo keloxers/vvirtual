@@ -284,6 +284,32 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				});
 
 
+				Route::get('/farmaciadeturno', function () {
+
+						$fecha=date("Y-m-d");
+
+						$turnos = DB::table('turnos')
+															->where('fecha', '>=', $fecha)
+															->orderBy('fecha', 'asc')->paginate(2);
+
+						$result  = array();
+						foreach ($turnos as $turno) {
+
+									$result[] = array(
+											"fecha" => $turno->fecha,
+											"turno" => $turno->turno
+									);
+						};
+
+						header('HTTP/1.1 200 OK');
+						header('Content-type: text/html');
+
+						echo json_encode($result);
+						return;
+				});
+
+
+
 
 				Route::post('/enviarclasificado', function () {
 

@@ -289,8 +289,6 @@ $fecha=date("Y-m-d");
 $turno = DB::table('turnos')
 					->where('fecha', '=', $fecha)
 					->first();
-
-
 if ($turno) {
 
 ?>
@@ -315,11 +313,6 @@ if ($turno) {
 <?php
 				}
 ?>
-
-
-
-
-
 
 
 
