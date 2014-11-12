@@ -450,8 +450,6 @@
 			</div>
 		</div>
 
-		<!-- End title bar -->
-		@endif
 	</div>
 </div>
 <br>
