@@ -431,6 +431,34 @@
 
 
 
+<br>
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+	<div class="pi-section-w pi-section-white">
+		<div class="pi-row">
+			<div class="pi-section-w pi-center-text-xs pi-text-center">
+
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- VirasoroVirtual 728 x90 -->
+				<ins class="adsbygoogle"
+						style="display:inline-block;width:728px;height:90px"
+						data-ad-client="ca-pub-0796827730614625"
+						data-ad-slot="9003432429"></ins>
+				<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+
+			</div>
+		</div>
+
+		<!-- End title bar -->
+		@endif
+	</div>
+</div>
+<br>
+
+
+
+
 <!-- Copyright area -->
 <div class="pi-section-w pi-section-header-w pi-section-dark pi-border-top-light pi-border-bottom-strong-base pi-section-header-lg-w">
 	<div class="pi-section pi-section-header pi-section-header-lg pi-center-text-2xs pi-clearfix">
