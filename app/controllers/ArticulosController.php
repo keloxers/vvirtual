@@ -36,7 +36,7 @@ class ArticulosController extends BaseController {
 
 				$clasificados = DB::table('clasificados')
 													->where('estado', '=', 'publicado')
-													->orderBy('id', 'desc')->paginate(4);
+													->orderBy('id', 'desc')->paginate(8);
 
 
         return View::make('home', array('articulo_tapa' => $articulo_tapa,

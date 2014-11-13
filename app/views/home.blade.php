@@ -117,7 +117,7 @@
 
 			<div class="pi-row">
 				<div class="pi-col-sm-8 pi-center-text-xs">
-					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Clasificados</h1>
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Últimos Clasificados</h1>
 				</div>
 			</div>
 
