@@ -147,6 +147,25 @@
 				<table class="pi-pricing">
 					<thead>
 					<tr>
+
+<?php
+					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
+?>
+
+						<td>
+							<strong>
+								<a href="/clasificadoscategorias/{{ $clasificadoscategorias->id }}">
+									{{ $clasificadoscategorias->clasificadoscategoria}}
+								</a>
+							</strong>
+						</td>
+
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+
+
 						<td class="pi-text-center">
 							<span class="pi-pricing-title">
 								<a href="/clasificados/{{ $clasificado->id }}">
@@ -159,21 +178,8 @@
 								</a>
 							</p>
 						</td>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
 
-<?php
-					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
-?>
 
-						<td>
-							<strong>
-								<a href="/clasificadoscategorias/{{ $clasificadoscategorias->id }}">
-									{{ $clasificadoscategorias->clasificadoscategoria}}
-								</a>
-							</strong></td>
 					</tr>
 					</tbody>
 				</table>
