@@ -147,18 +147,12 @@
 				<table class="pi-pricing">
 					<thead>
 					<tr>
-						<td class="pi-pricing-head-purple pi-text-center">
+						<td class="pi-pricing-head-base pi-text-center">
 							<span class="pi-pricing-title">
 								<a href="/clasificados/{{ $clasificado->id }}">
 									{{ $clasificado->operacion }}
 								</a>
 								</span>
-
-							<div class="pi-pricing-price">
-								<span class="pi-pricing-currency">$</span>
-								<span class="pi-pricing-amount">{{ $clasificado->precio }}</span>
-								<span class="pi-pricing-period">.00</span>
-							</div>
 							<p class="pi-italic">
 								<a href="/clasificados/{{ $clasificado->id }}">
 										{{ $clasi }}
