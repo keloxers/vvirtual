@@ -147,7 +147,7 @@
 				<table class="pi-pricing">
 					<thead>
 					<tr>
-						<td class="pi-pricing-head-base pi-text-center">
+						<td class="pi-text-center">
 							<span class="pi-pricing-title">
 								<a href="/clasificados/{{ $clasificado->id }}">
 									{{ $clasificado->operacion }}
