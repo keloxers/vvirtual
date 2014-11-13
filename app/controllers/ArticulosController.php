@@ -160,8 +160,8 @@ public function ver()
 											->where('estado', '=', 'publicado')
 											->where('categorias_id', '=', $articulo->categorias_id)
 											->where('id', '<>', $articulo->id)
+											->where('created_at', '>=', new DateTime('-10 days'))
 											->orderBy('visitas', 'desc')
-											->orderBy('created_at', 'desc')
 											->paginate(3);
 
 
