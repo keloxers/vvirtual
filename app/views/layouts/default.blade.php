@@ -160,6 +160,16 @@
 		<li><a href="/contactos"><span>Contactos</span></a></li>
     <li><a href="/pages"><span>Paginas</span></a></li>
 		<li><a href="/turnos"><span>Turnos</span></a></li>
+
+		<li class="pi-has-dropdown"><a href="#"><span>Padle</span></a>
+			<ul class="pi-submenu pi-has-border pi-items-have-borders pi-has-shadow pi-submenu-dark">
+				<li><a href="/padlejugadors"><span>Jugadores</span></a></li>
+				<li><a href="/padlepartidos"><span>Partidos</span></a></li>
+			</ul>
+
+		</li>
+
+
 	</ul>
 
 </li>

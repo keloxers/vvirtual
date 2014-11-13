@@ -47,9 +47,9 @@ Route::resource('users', 'UserController');
 // Group Routes
 Route::resource('groups', 'GroupController');
 
+
 App::missing(function($exception)
 {
-
 		return Response::view('pages.404');
 });
 
@@ -91,6 +91,8 @@ Route::group(['before' => 'auth|standardUser'], function()
 		Route::resource('turnos', 'TurnosController');
 		Route::get('/turnos/{id}/delete', 'TurnosController@destroy');
 
+		Route::resource('padlejugadors', 'PadlejugadorsController');
+		Route::get('/padlejugadors/{id}/delete', 'PadlejugadorsController@destroy');
 
 		Route::resource('ofertas', 'OfertasController');
 

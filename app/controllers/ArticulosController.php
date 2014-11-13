@@ -12,6 +12,7 @@ class ArticulosController extends BaseController {
 	{
 
 
+
         $articulo_tapa = DB::table('articulos')
 													->where('estado', '=', 'publicado')
 													->where('tipo', '=', 'principal')
@@ -24,8 +25,8 @@ class ArticulosController extends BaseController {
 
 				$articulos_masvistos = DB::table('articulos')
 													->where('estado', '=', 'publicado')
+													->where('created_at', '>=', new DateTime('-10 days'))
 													->orderBy('visitas', 'desc')
-													->orderBy('created_at', 'desc')
 													->paginate(4);
 
 				$banners_smalls = DB::table('banners')
