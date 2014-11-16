@@ -10,15 +10,15 @@
 		<div class="pi-section-w pi-section-white">
 			<div class="pi-section">
 
-				<a href='/padlejugadors/create' class='btn pi-btn-base pi-btn-small'>Nuevo jugador</a><br>
+				<a href='/padlepartidos/create' class='btn pi-btn-base pi-btn-small'>Nuevo partido</a><br>
 
 				<hr class="pi-divider-gap-70">
 
 				<h2 class="h4 pi-weight-700 pi-uppercase pi-has-bg pi-margin-bottom-25">
-					Jugadores
+					Partidos Jugados - Resultados
 				</h2>
 
-<?php if (count($padlejugadors)>0 )  { ?>
+<?php if (count($padlepartidos)>0 )  { ?>
 
 <!-- Table -->
 		<div class="pi-responsive-table-sm">
@@ -33,13 +33,13 @@
 							<i class="icon-clock pi-tooltip pi-tooltip-base" data-placement="right" title="" data-original-title="Consectetur adipisicing elit, sed do eiusmod tempor incididunt"></i>
 						</th> -->
 						<th>
-							Jugador
+							Partido
 						</th>
 						<th>
 							Categoria
 						</th>
 						<th>
-							Puntos
+							Zona
 						</th>
 						<th>
 							Accion
@@ -57,29 +57,25 @@
 
 
 
-				@foreach ($padlejugadors as $padlejugador)
+				@foreach ($padlepartidos as $padlepartido)
 
 					<!-- Table row -->
 					<tr>
 						<td>
-							{{$padlejugador->padlejugador}}
+							Ganó {{$padlepartido->ganador1}} - {{$padlepartido->ganador2}} a {{$padlepartido->perdedor1}} - {{$padlepartido->perdedor1}}
 						</td>
 						<td>
-							{{$padlejugador->padlecategorias_id}}
+							{{$padlepartido->padlecategorias_id}}
 						</td>
 						<td>
-							
+							{{$padlepartido->padlecategorias_id}}
 						</td>
 
 						<td>
-							<a href='/padlejugadors/{{$padlejugador->id}}/edit' class='btn btn-xs btn-primary'>Editar</a>
+							<a href='/padlepartido/{{$padlepartido->id}}/edit' class='btn btn-xs btn-primary'>Editar</a>
 						</td>
 					</tr>
 					<!-- End table row -->
-
-
-
-
 
 
 				@endforeach
@@ -98,7 +94,7 @@
 
 
 <div class="pi-pagenav pi-text-center">
-	{{ $padlejugadors->links()}}
+	{{ $padlepartidos->links()}}
 </div>
 
 

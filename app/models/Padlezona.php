@@ -3,11 +3,11 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Padlepuntos extends Eloquent {
+class Padlezona extends Eloquent {
 
-		protected $table = 'padlepuntos';
+		protected $table = 'padlezonas';
 
-		// protected $fillable = ['padlepartido'];
+		protected $fillable = ['padlezona'];
 
 	public static $errors;
 

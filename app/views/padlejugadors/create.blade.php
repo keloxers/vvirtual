@@ -65,27 +65,6 @@
 					</div>
 					<!-- End first name form -->
 
-					<!-- First name form -->
-					<div class="form-group">
-						<label for="titular">Puntos</label>
-
-						<div class="pi-input-with-icon">
-							<div class="pi-input-icon"><i class="icon-pencil"></i></div>
-							{{ Form::text('puntos', '', array('class' => 'form-control', 'id' => 'turno', 'placeholder' => 'Puntos')) }}
-								<?php if ($errors->first('padlejugador')) { ?>
-										<div class="pi-alert-danger fade in">
-											<button type="button" class="pi-close" data-dismiss="alert">
-												<i class="icon-cancel"></i>
-											</button>
-											<p>
-												<strong>Oh !</strong> {{ $errors->first('puntos') }}.
-											</p>
-										</div>
-								<?php } ?>
-
-						</div>
-					</div>
-					<!-- End first name form -->
 
 
 					<hr class="pi-divider-gap-10">

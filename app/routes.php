@@ -54,7 +54,6 @@ App::missing(function($exception)
 });
 
 
-
 // Index
 Route::get( '/', array(
 		'as' => 'articulos.index',
@@ -93,6 +92,10 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 		Route::resource('padlejugadors', 'PadlejugadorsController');
 		Route::get('/padlejugadors/{id}/delete', 'PadlejugadorsController@destroy');
+
+		Route::resource('padlepartidos', 'PadlepartidosController');
+		Route::get('/padlepartidos/{id}/delete', 'PadlepartidosController@destroy');
+
 
 		Route::resource('ofertas', 'OfertasController');
 
@@ -135,16 +138,7 @@ Route::get('/articulo/{url_seo}', 'ArticulosController@show');
 
 Route::get('/', array('as' => 'home', 'uses' => 'ArticulosController@index'));
 
-
-
-
-
 Route::resource('clasificadoscategorias', 'ClasificadoscategoriasController');
-
-
-
-
-
 
 Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
@@ -321,11 +315,11 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
 					$result = var_dump(Input::All());
 
-// // die;
-// //
+// die;
 //
-// // 'categorias_id' => 'exists:rubros,id'
-//
+
+// 'categorias_id' => 'exists:rubros,id'
+
 // $rules = [
 // 	'clasificado' => 'required',
 // 	'precio' => 'required',
@@ -338,31 +332,31 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 // 	return Redirect::back()->withInput()->withErrors(Clasificado::$errors);
 //
 // }
-//
-// $clasificado = new Clasificado;
-//
-// //$clasificado->users_id = Sentry::getUser()->id;
-// $clasificado->users_id = 1;
-// $clasificado->operacion = Input::get('operacion');
-// $clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
-// $clasificado->clasificado = Input::get('clasificado');
-// $clasificado->precio = Input::get('precio');
-// $clasificado->telefono = Input::get('telefono');
-// $clasificado->email = Input::get('email');
-// $clasificado->estado = 'espera';
-// $url_seo = Input::get('clasificado');
-// $url_seo = $this->url_slug($url_seo) . date('ljSFY');
-//
-// $clasificado->url_seo = $url_seo;
-//
-// $clasificado->save();
-//
-//
-// 						$clasificados = DB::table('clasificados')
-// 															->where('estado', '=', 'publicado')
-// 															->orderBy('id', 'desc')->paginate(20);
-//
-//
+
+$clasificado = new Clasificado;
+
+//$clasificado->users_id = Sentry::getUser()->id;
+$clasificado->users_id = 1;
+$clasificado->operacion = Input::get('operacion');
+$clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
+$clasificado->clasificado = Input::get('clasificado');
+$clasificado->precio = Input::get('precio');
+$clasificado->telefono = Input::get('telefono');
+$clasificado->email = Input::get('email');
+$clasificado->estado = 'espera';
+$url_seo = Input::get('clasificado');
+$url_seo = $this->url_slug($url_seo) . date('ljSFY');
+
+$clasificado->url_seo = $url_seo;
+
+$clasificado->save();
+
+
+						$clasificados = DB::table('clasificados')
+															->where('estado', '=', 'publicado')
+															->orderBy('id', 'desc')->paginate(20);
+
+
 
 						header('HTTP/1.1 200 OK');
 						header('Content-type: text/html');

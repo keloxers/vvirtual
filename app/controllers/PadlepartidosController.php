@@ -1,6 +1,6 @@
 <?php
 
-class PadlejugadorsController extends BaseController {
+class PadlepartidosController extends BaseController {
 
 
 	/**
@@ -12,11 +12,11 @@ class PadlejugadorsController extends BaseController {
 	{
 
 
-		$padlejugadors = DB::table('padlejugadors')
-		->orderBy('padlejugador', 'asc')
+		$padlepartidos = DB::table('padlepartidos')
+		->orderBy('id', 'asc')
 		->paginate(30);
 
-		return View::make('padlejugadors.index', array('padlejugadors' => $padlejugadors));
+		return View::make('padlepartidos.index', array('padlepartidos' => $padlepartidos));
 
 	}
 
@@ -28,7 +28,7 @@ class PadlejugadorsController extends BaseController {
 	*/
 	public function create()
 	{
-		return View::make('padlejugadors.create');
+		return View::make('padlepartidos.create');
 	}
 
 	/**
