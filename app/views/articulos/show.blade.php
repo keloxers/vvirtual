@@ -129,7 +129,7 @@
 					<hr class="pi-divider pi-divider-dashed pi-divider-big">
 
 					<h4 class="pi-has-bg pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-20">
-						Comentarios
+						Que opinan de este tema ?
 					</h4>
 					<!-- <div id="disqus_thread"></div>
 					<script type="text/javascript">
