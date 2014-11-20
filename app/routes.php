@@ -68,6 +68,9 @@ Route::get('/pages/{url_seo}', 'PagesController@show');
 Route::group(['before' => 'auth|standardUser'], function()
 {
 
+
+	Route::resource('agendas', 'AgendasController');
+
 		Route::resource('contactos', 'ContactosController');
 		Route::get('/contactos/{id}/delete', 'ContactosController@destroy');
 
