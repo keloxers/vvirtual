@@ -92,11 +92,6 @@
 					{{$articulo->copete}}
 				</p>
 
-				<p>
-					{{$articulo->texto}}
-				</p>
-
-
 
 				<!-- Box -->
 				<div class="pi-box pi-box-slave pi-box-small pi-border pi-round pi-margin-bottom-40">
@@ -121,6 +116,12 @@
 
 				</div>
 				<!-- End box -->
+
+				
+
+				<p>
+					{{$articulo->texto}}
+				</p>
 
 
 
