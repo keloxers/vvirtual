@@ -166,7 +166,7 @@
 				<hr class="pi-divider pi-divider-dashed pi-divider-big">
 
 				<h4 class="pi-has-bg pi-weight-700 pi-uppercase pi-letter-spacing pi-margin-bottom-25">
-					Quizas tambien te guste leer ...
+					Quizas tambien te gustaria leer ...
 				</h4>
 
 				<!-- Row -->
