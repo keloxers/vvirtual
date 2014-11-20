@@ -124,7 +124,7 @@
 
 
 
-				<?php if ($comentarios == 'si') { ?>
+				<?php if ($articulo->comentarios == 'si') { ?>
 
 					<hr class="pi-divider pi-divider-dashed pi-divider-big">
 
