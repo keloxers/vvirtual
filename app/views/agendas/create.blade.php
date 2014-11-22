@@ -26,26 +26,38 @@
 				<hr class="pi-divider-gap-10">
 
 				<!-- Forms -->
-				{{ Form::open(array('route' => 'padlejugadors.store', 'files' => true, 'class' => 'panel-body wrapper-lg')) }}
+				{{ Form::open(array('route' => 'agendas.store', 'files' => true, 'class' => 'panel-body wrapper-lg')) }}
 
 
 
-					<!-- Message -->
-					<div class="form-group">
-						<label for="exampleInputMessage-3">Categoria</label>
+				<!-- First name form -->
+				<div class="form-group">
+					<label for="titular">Fecha y hora (AAAA-MM-DD HH:MM)</label>
 
+					<div class="pi-input-with-icon">
+						<div class="pi-input-icon"><i class="icon-pencil"></i></div>
+						{{ Form::text('fecha', '', array('class' => 'form-control', 'id' => 'turno', 'placeholder' => 'Respete el formato AAAA-MM-DD HH:MM, ejemplo 2014-12-25 21:00')) }}
+						<?php if ($errors->first('fecha')) { ?>
+							<div class="pi-alert-danger fade in">
+								<button type="button" class="pi-close" data-dismiss="alert">
+									<i class="icon-cancel"></i>
+								</button>
+								<p>
+									<strong>Oh !</strong> {{ $errors->first('fecha') }}.
+								</p>
+							</div>
+							<?php } ?>
 
-								{{ Form::select( 'padlecategorias_id', Padlecategoria::All()->
-										lists('padlecategoria', 'id'), Input::get('padlecategoria'), array( "placeholder" => "", 'class' => 'form-control input-lg')) }}
-
+						</div>
 					</div>
-					<!-- End message form -->
+					<!-- End first name form -->
+
 
 
 
 					<!-- First name form -->
 					<div class="form-group">
-						<label for="titular">Jugador</label>
+						<label for="titular">Agenda</label>
 
 						<div class="pi-input-with-icon">
 							<div class="pi-input-icon"><i class="icon-pencil"></i></div>

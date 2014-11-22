@@ -60,7 +60,6 @@ Route::get( '/', array(
 		'uses' => 'ArticulosController@index'
 ) );
 
-Route::get('/pages/{url_seo}', 'PagesController@show');
 
 
 
@@ -102,7 +101,12 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 		Route::resource('ofertas', 'OfertasController');
 
-		Route::resource('pages', 'PagesController');
+		// Route::resource('pages', 'PagesController');
+
+		Route::get('/pages/create', 'PagesController@create');
+		Route::post( '/pages/store', array( 'as' => 'pages.store', 'uses' => 'PagesController@store') );
+		Route::get('/pages/{id}/edit', 'PagesController@edit');
+		Route::post( '/pages/update', array( 'as' => 'pages.update', 'uses' => 'PagesController@update') );
 		Route::get('/pages/{id}/delete', 'PagesController@destroy');
 
 		Route::resource('banners', 'BannersController');
@@ -115,6 +119,9 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 
 });
+
+
+Route::get('/pages/{url_seo}', 'PagesController@show');
 
 
 
@@ -310,63 +317,6 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 						return;
 				});
 
-
-
-
-				Route::post('/enviarclasificado', function () {
-
-
-					$result = var_dump(Input::All());
-
-// die;
-//
-
-// 'categorias_id' => 'exists:rubros,id'
-
-// $rules = [
-// 	'clasificado' => 'required',
-// 	'precio' => 'required',
-// 	'telefono' => 'required',
-// ];
-//
-//
-// if (! Clasificado::isValid(Input::all(),$rules)) {
-//
-// 	return Redirect::back()->withInput()->withErrors(Clasificado::$errors);
-//
-// }
-
-$clasificado = new Clasificado;
-
-//$clasificado->users_id = Sentry::getUser()->id;
-$clasificado->users_id = 1;
-$clasificado->operacion = Input::get('operacion');
-$clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
-$clasificado->clasificado = Input::get('clasificado');
-$clasificado->precio = Input::get('precio');
-$clasificado->telefono = Input::get('telefono');
-$clasificado->email = Input::get('email');
-$clasificado->estado = 'espera';
-$url_seo = Input::get('clasificado');
-$url_seo = $this->url_slug($url_seo) . date('ljSFY');
-
-$clasificado->url_seo = $url_seo;
-
-$clasificado->save();
-
-
-						$clasificados = DB::table('clasificados')
-															->where('estado', '=', 'publicado')
-															->orderBy('id', 'desc')->paginate(20);
-
-
-
-						header('HTTP/1.1 200 OK');
-						header('Content-type: text/html');
-
-						echo json_encode($result);
-						return;
-				});
 
 
 });

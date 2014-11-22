@@ -10,7 +10,7 @@
 		<div class="pi-section-w pi-section-white">
 			<div class="pi-section">
 
-				<a href='/padlejugadors/create' class='btn pi-btn-base pi-btn-small'>Nuevo evento en la agenda</a><br>
+				<a href='/agendas/create' class='btn pi-btn-base pi-btn-small'>Nuevo evento en la agenda</a><br>
 
 				<hr class="pi-divider-gap-70">
 
