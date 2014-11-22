@@ -61,6 +61,8 @@ Route::get( '/', array(
 ) );
 
 
+Route::get('/pages/{url_seo}', 'PagesController@show');
+
 
 
 # Standard User Routes
@@ -101,12 +103,9 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 		Route::resource('ofertas', 'OfertasController');
 
-		// Route::resource('pages', 'PagesController');
+		Route::resource('pages', 'PagesController');
 
-		Route::get('/pages/create', 'PagesController@create');
-		Route::post( '/pages/store', array( 'as' => 'pages.store', 'uses' => 'PagesController@store') );
-		Route::get('/pages/{id}/edit', 'PagesController@edit');
-		Route::post( '/pages/update', array( 'as' => 'pages.update', 'uses' => 'PagesController@update') );
+
 		Route::get('/pages/{id}/delete', 'PagesController@destroy');
 
 		Route::resource('banners', 'BannersController');
@@ -121,7 +120,7 @@ Route::group(['before' => 'auth|standardUser'], function()
 });
 
 
-Route::get('/pages/{url_seo}', 'PagesController@show');
+
 
 
 
