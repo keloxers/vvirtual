@@ -278,15 +278,7 @@
 				</div>
 				<!-- End flickr photos -->
 
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- VirasoroVirtual Skyscreper -->
-				<ins class="adsbygoogle"
-				style="display:inline-block;width:300px;height:600px"
-				data-ad-client="ca-pub-0796827730614625"
-				data-ad-slot="6016111623"></ins>
-				<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+
 
 				<?
 				 	$publi_google = true;
