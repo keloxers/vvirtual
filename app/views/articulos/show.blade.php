@@ -280,11 +280,6 @@
 
 
 
-				<?
-				 	$publi_google = true;
-				?>
-
-
 			</div>
 
 		</div>

@@ -56,6 +56,12 @@
 
 
 </head>
+
+<?
+		Session::put('google', false);
+?>
+
+
 <body>
 
 <div id="pi-all">
@@ -545,12 +551,7 @@
 <script src="/3dParty/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <script src="/scripts/pi.init.revolutionSlider.js"></script>
 
-<?php
-	if (isset($publi_google)) {
 
-	} else {
-
-		?>
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -562,11 +563,6 @@
 
 		</script>
 
-		<?php
-
-
-	}
-?>
 
 
 </body>
