@@ -39,7 +39,7 @@
 
 <?php
 
-	$user = Sentry::findUserById($articulo->id);
+	$user = Sentry::findUserById(3);
 
 ?>
 
