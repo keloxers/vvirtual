@@ -229,7 +229,7 @@
 				->where('padre_id', '=', $articulo->id)
 				->first();
 
-				if (preg_match('/^.{1,260}\b/s', $articulo->copete, $match))
+				if (preg_match('/^.{1,460}\b/s', $articulo->copete, $match))
 				{ $texto = $match[0]; }
 				$categoria = Categoria::find($articulo->categorias_id);
 				?>
