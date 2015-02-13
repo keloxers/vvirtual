@@ -24,7 +24,6 @@
 
 
 
-
 	<!--Fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic'
 		  rel='stylesheet' type='text/css'>
@@ -53,6 +52,16 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+
+
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+
+
+
 
 
 </head>
@@ -510,8 +519,16 @@
 <!-- End footer -->
 
 </div>
+
+<div class="meerkat">
+			<div id="splash-content">
+				<img id="enter" src="/img/logo-base.png" alt="Meerkat" />
+			</div>
+</div>
+
 <div class="pi-scroll-top-arrow" data-scroll-to="0"></div>
 
+<script src="/3dParty/jquery.meerkat.1.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
 <script src="/3dParty/jquery-1.11.0.min.js"></script>
 <script src="/scripts/pi.helpers.js"></script>
