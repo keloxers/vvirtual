@@ -84,7 +84,7 @@
 
 		<!-- Phone -->
 		<div class="pi-header-block pi-header-block-txt">
-			<i class="pi-header-block-icon icon-phone pi-icon-base pi-icon-square"></i>Whastapp: <strong>+54 3756 417551</strong>
+			<i class="pi-header-block-icon icon-phone pi-icon-base pi-icon-square"></i>Whastapp: <strong>+54 3756 610566</strong>
 		</div>
 		<!-- End phone -->
 
@@ -322,7 +322,7 @@
 					</h6>
 
 					<p>
-						+54.3756.417551
+						+03756 15610566
 						<br>
 						<a href="#">webmaster@virasorovirtual.com</a>
 					</p>
@@ -520,13 +520,6 @@
 
 </div>
 
-<div class="meerkat">
-			<div id="splash-content">
-				<img id="enter" src="/img/logo-base.png" alt="Meerkat" />
-			</div>
-</div>
-
-<div class="pi-scroll-top-arrow" data-scroll-to="0"></div>
 
 <script src="/3dParty/jquery.meerkat.1.3.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
