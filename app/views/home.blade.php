@@ -214,11 +214,8 @@
 <?php
 					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
 ?>
+								{{ $clasificadoscategorias->clasificadoscategoria}}:
 								{{ $clasificado->operacion }}:
-								<a href="/clasificadoscategorias/{{ $clasificadoscategorias->id }}">
-									{{ $clasificadoscategorias->clasificadoscategoria}}
-								</a>
-
 								<a href="/clasificados/{{ $clasificado->id }}">
 										{{ $clasi }}
 								</a>
