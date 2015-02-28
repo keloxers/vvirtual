@@ -214,8 +214,9 @@
 <?php
 					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
 ?>
+
+								<span class="pi-text-bg-base">{{ strtoupper($clasificado->operacion) }}</span>
 								{{ $clasificadoscategorias->clasificadoscategoria}}:
-								{{ $clasificado->operacion }}:
 								<a href="/clasificados/{{ $clasificado->id }}">
 										{{ $clasi }}
 								</a>
