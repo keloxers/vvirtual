@@ -13,6 +13,7 @@ class ArticulosController extends BaseController {
 
 
 
+
         $articulo_tapa = DB::table('articulos')
 													->where('estado', '=', 'publicado')
 													->where('tipo', '=', 'principal')
@@ -39,13 +40,25 @@ class ArticulosController extends BaseController {
 													->orderBy('id', 'desc')->paginate(30);
 
 
+				$encuesta = DB::table('encuestas')
+													->where('activo', '=', 'si')
+													->orderBy('id', 'desc')
+													->first();
+
+				$respuestas = DB::table('respuestas')
+													->where('encuestas_id', '=', $encuesta->id)
+													->orderBy('id')
+													->get();
+
+
         return View::make('home', array('articulo_tapa' => $articulo_tapa,
 																				'articulos' => $articulos,
 																				'articulos_masvistos' => $articulos_masvistos,
 																				'banners_smalls' => $banners_smalls,
-																				'clasificados' => $clasificados
-
-																				));
+																				'clasificados' => $clasificados,
+																				'encuesta' => $encuesta,
+																				'respuestas' => $respuestas
+									));
 
 	}
 

@@ -174,6 +174,7 @@
 		<li><a href="/banners"><span>Banners</span></a></li>
 		<li><a href="/clasificados"><span>Clasificados</span></a></li>
 		<li><a href="/contactos"><span>Contactos</span></a></li>
+		<li><a href="/encuestas"><span>Encuestas</span></a></li>
     <li><a href="/pages"><span>Paginas</span></a></li>
 		<li><a href="/turnos"><span>Turnos</span></a></li>
 

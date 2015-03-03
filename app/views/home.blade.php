@@ -30,6 +30,8 @@
 
 
 
+
+
 @if (count($articulo_tapa))
 
 
@@ -105,6 +107,49 @@
 
 @endif
 
+
+@if (Auditoriavoto::voto())
+<br>
+
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-shadow-inside-top pi-section-base">
+	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+	<div class="pi-section">
+
+		<!-- Row -->
+		<div class="pi-row">
+
+			<!-- Col 8 -->
+			<div class="pi-col-sm-12 pi-text-left pi-center-text-sm">
+				<p class="lead-30 pi-text-white">
+					{{$encuesta->encuesta}} <span class="pi-weight-400">?</span>
+				</p>
+			</div>
+			<!-- End col 8 -->
+
+			<!-- Col 4 -->
+			<div class="pi-col-sm-12 pi-center-text-sm pi-center-text-sm">
+				<p>
+					@foreach ($respuestas as $respuesta)
+							<a href="/encuestas/votar/{{$respuesta->id}}" class="btn pi-btn-base-2 pi-btn-big">
+								{{$respuesta->respuesta}}
+							</a>
+					@endforeach
+				</p>
+			</div>
+			<!-- End col 4 -->
+
+		</div>
+		<!-- End row -->
+
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
+
+@endif
 
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
@@ -216,7 +261,7 @@
 ?>
 
 								<span class="pi-text-bg-base">{{ strtoupper($clasificado->operacion) }}</span>
-								{{ $clasificadoscategorias->clasificadoscategoria}}:
+									{{ $clasificadoscategorias->clasificadoscategoria}}:
 								<a href="/clasificados/{{ $clasificado->id }}">
 										{{ $clasi }}
 								</a>

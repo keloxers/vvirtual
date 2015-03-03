@@ -63,6 +63,8 @@ Route::get( '/', array(
 
 Route::get('/pages/{url_seo}', 'PagesController@show');
 
+Route::get('/encuestas/votar/{id}', 'EncuestasController@votar');
+
 
 
 # Standard User Routes
