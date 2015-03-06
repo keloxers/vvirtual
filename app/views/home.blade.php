@@ -152,6 +152,89 @@
 @endif
 
 
+
+
+
+@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
+
+<br>
+<link rel="stylesheet" type="text/css" href="/css/counters.css"/>
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url(img_external/gallery/modern-skyscraper.jpg);">
+	<div class="pi-texture pi-section-overlay-base"></div>
+	<div class="pi-section pi-padding-top-50 pi-padding-bottom-20">
+
+		<div class="pi-text-center pi-padding-bottom-20">
+			<h6 class="pi-uppercase pi-letter-spacing-3">
+				{{$encuesta->encuesta}}
+			</h6>
+		</div>
+
+		<?php $votos = DB::table('auditoriavotos')->where('encuestas_id', $encuesta->id)->count(); ?>
+
+
+		@if ($votos > 0)
+						<!-- Row -->
+						<div class="pi-row pi-grid-small-margins pi-text-center">
+
+							<?php $i=intval(12 / count($respuestas)); ?>
+
+							@foreach ($respuestas as $respuesta)
+
+							<?php
+
+							$voto = DB::table('auditoriavotos')->where('respuestas_id', $respuesta->id)->count();
+
+							$voto = number_format(($voto * 100 / $votos),2);
+
+							?>
+
+							<!-- Col 3 -->
+							<div class="pi-col-sm-{{$i}} pi-col-2xs-6 pi-padding-bottom-20">
+								<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="230" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
+									<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-600 pi-text-shadow">
+
+										<p>
+											<i class="icon-thumbs-up"></i>
+										</p>
+										<div class="pi-counter-number">{{$voto}} %</div>
+
+									</div>
+									<p class="lead-18">{{$respuesta->respuesta}}</p>
+								</div>
+							</div>
+							<!-- End col 3 -->
+
+							@endforeach
+
+
+						</div>
+						<!-- End row -->
+			@endif
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+
+
+
+
+
+
+
+
+
+
+
+@endif
+
+
+
+
+
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
 	<div class="pi-section-w pi-section-white">
@@ -508,5 +591,9 @@ if ($turno) {
 </div>
 </div>
 </div>
+
+<script src="/scripts/pi.counter.js"></script>
+<script src="/scripts/pi.init.counter.js"></script>
+
 
 @stop
