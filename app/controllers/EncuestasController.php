@@ -176,7 +176,7 @@ class EncuestasController extends BaseController {
 
 			$ip = Auditoriavoto::get_client_ip();
 			$sess = Session::getId();
-			
+
 			$auditoriavoto->ip = $ip;
 			$auditoriavoto->encuestas_id = $respuesta->encuestas_id;
 			$auditoriavoto->respuestas_id = $id;
@@ -185,8 +185,8 @@ class EncuestasController extends BaseController {
 
 			$auditoriavoto->save();
 
-			setcookie("cookie_vv", $auditoriavoto->cookie);
-			setcookie("cookie_id", $auditoriavoto->id);
+			setcookie("cookie_vv", $auditoriavoto->cookie, 2147483647);
+			setcookie("cookie_id", $auditoriavoto->id, 2147483647);
 
 
 
