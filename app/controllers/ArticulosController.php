@@ -44,12 +44,14 @@ class ArticulosController extends BaseController {
 													->where('activo', '=', 'si')
 													->orderBy('id', 'desc')
 													->first();
-
-				$respuestas = DB::table('respuestas')
-													->where('encuestas_id', '=', $encuesta->id)
-													->orderBy('id')
-													->get();
-
+				if ($encuesta) {
+						$respuestas = DB::table('respuestas')
+														->where('encuestas_id', '=', $encuesta->id)
+														->orderBy('id')
+														->get();
+				} else {
+						$respuestas = "";
+				}
 
         return View::make('home', array('articulo_tapa' => $articulo_tapa,
 																				'articulos' => $articulos,

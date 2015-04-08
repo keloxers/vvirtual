@@ -38,55 +38,61 @@ class Auditoriavoto extends Eloquent {
 												->orderBy('id', 'desc')
 												->first();
 
-			if (isset($_COOKIE["cookie_id"])) {
-				$cookie_id = $_COOKIE["cookie_id"];
-			}
-
-			if (isset($_COOKIE["cookie_vv"])) {
-				$cookie_vv = $_COOKIE["cookie_vv"];
-			}
-
-			$ip = Auditoriavoto::get_client_ip();
-			$sess = Session::getId();
-
-			$auditoriavoto = DB::table('auditoriavotos')
-													->where('cookie', '=', $cookie_vv)
-													->where('encuestas_id', '=', $encuesta->id)
-													->first();
-
-			if ($auditoriavoto) {
+			if ($encuesta) {
 
 
-				$salida = false;
+					if (isset($_COOKIE["cookie_id"])) {
+						$cookie_id = $_COOKIE["cookie_id"];
+					}
 
-			}
+					if (isset($_COOKIE["cookie_vv"])) {
+						$cookie_vv = $_COOKIE["cookie_vv"];
+					}
 
-			$auditoriavoto = DB::table('auditoriavotos')
-													->where('session', '=', $sess)
-													->where('encuestas_id', '=', $encuesta->id)
-													->first();
+					$ip = Auditoriavoto::get_client_ip();
+					$sess = Session::getId();
 
-			if ($auditoriavoto) {
-				$salida = false;
-			}
+					$auditoriavoto = DB::table('auditoriavotos')
+															->where('cookie', '=', $cookie_vv)
+															->where('encuestas_id', '=', $encuesta->id)
+															->first();
+
+					if ($auditoriavoto) {
 
 
-			$auditoriavoto = DB::table('auditoriavotos')
-													->where('ip', '=', $ip)
-													->where('encuestas_id', '=', $encuesta->id)
-													->first();
+						$salida = false;
 
-			if ($auditoriavoto) {
+					}
 
-					$datetime1 = new DateTime($auditoriavoto->created_at);
-					$datetime2 = new DateTime();
-					$interval = $datetime1->diff($datetime2);
-					$horas = $interval->format('%h%');
+					$auditoriavoto = DB::table('auditoriavotos')
+															->where('session', '=', $sess)
+															->where('encuestas_id', '=', $encuesta->id)
+															->first();
 
-					if ($horas < 2 ) {
+					if ($auditoriavoto) {
 						$salida = false;
 					}
 
+
+					$auditoriavoto = DB::table('auditoriavotos')
+															->where('ip', '=', $ip)
+															->where('encuestas_id', '=', $encuesta->id)
+															->first();
+
+					if ($auditoriavoto) {
+
+							$datetime1 = new DateTime($auditoriavoto->created_at);
+							$datetime2 = new DateTime();
+							$interval = $datetime1->diff($datetime2);
+							$horas = $interval->format('%h%');
+
+							if ($horas < 2 ) {
+								$salida = false;
+							}
+
+					}
+			} else {
+				$salida = false;
 			}
 
 			return $salida;

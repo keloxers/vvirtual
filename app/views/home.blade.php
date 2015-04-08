@@ -108,6 +108,9 @@
 @endif
 
 
+
+
+
 @if (Auditoriavoto::voto())
 <br>
 
@@ -155,7 +158,7 @@
 
 
 
-@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
+@if (Sentry::check() && Sentry::getUser()->hasAccess('admin') && $encuesta)
 
 <br>
 <link rel="stylesheet" type="text/css" href="/css/counters.css"/>
