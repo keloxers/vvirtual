@@ -10,7 +10,7 @@
 
 		<?php
 			$banner = new Banner();
-			$imagen = $banner->imprimir('articulobig');
+			$imagen = $banner->imprimir('homebig');
 		?>
 		@if ($imagen[0]<>"")
 
