@@ -332,7 +332,7 @@
 
 
 								<a href="http://vender.virasorovirtual.com">
-										<img src="/publicidades/vendervirasorovirtual.com" alt="">
+										<img src="/publicidades/vendervirasorovirtual.gif" alt="">
 								</a>
 
 </div>
