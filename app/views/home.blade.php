@@ -304,6 +304,21 @@
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
+	<!-- Title bar -->
+	<div class="pi-section-w pi-section-base pi-section-base-gradient">
+		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+		<div class="pi-section" style="padding: 15px 40px 12px;">
+
+			<div class="pi-row">
+				<div class="pi-col-sm-8 pi-center-text-xs"><a href="http://vender.virasorovirtual.com">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Clasificados</h1>
+				</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- End title bar -->
 
 
 
@@ -313,7 +328,14 @@
 
 		<div class="pi-row pi-grid-small-margins">
 
-			
+			<div class="pi-col-md-12">
+
+
+								<a href="http://vender.virasorovirtual.com">
+										<img src="/publicidades/vendervirasorovirtual.com" alt="">
+								</a>
+
+</div>
 
 		</div>
 
