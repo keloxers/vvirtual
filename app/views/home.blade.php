@@ -304,21 +304,6 @@
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
-	<!-- Title bar -->
-	<div class="pi-section-w pi-section-base pi-section-base-gradient">
-		<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
-		<div class="pi-section" style="padding: 15px 40px 12px;">
-
-			<div class="pi-row">
-				<div class="pi-col-sm-8 pi-center-text-xs"><a href="/clasificados">
-					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Últimos Clasificados</h1>
-				</a>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<!-- End title bar -->
 
 
 
@@ -328,37 +313,7 @@
 
 		<div class="pi-row pi-grid-small-margins">
 
-			<div class="pi-col-md-12">
-
-					@foreach ($clasificados as $clasificado)
-
-					<?php
-				if (preg_match('/^.{1,120}\b/s', $clasificado->clasificado, $match))
-				{
-					$clasi = $match[0] . " · ";
-				}
-
-?>
-
-
-
-<?php
-					$clasificadoscategorias = Clasificadoscategoria::find($clasificado->clasificadoscategorias_id);
-?>
-
-								<span class="pi-text-bg-base">{{ strtoupper($clasificado->operacion) }}</span>
-									{{ $clasificadoscategorias->clasificadoscategoria}}:
-								<a href="/clasificados/{{ $clasificado->id }}">
-										{{ $clasi }}
-								</a>
-
-
-
-
-
-@endforeach
-
-</div>
+			
 
 		</div>
 
