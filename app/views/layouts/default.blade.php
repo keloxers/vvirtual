@@ -176,6 +176,7 @@
 		<li><a href="/contactos"><span>Contactos</span></a></li>
 		<li><a href="/encuestas"><span>Encuestas</span></a></li>
     <li><a href="/pages"><span>Paginas</span></a></li>
+		<li><a href="/profesionals"><span>Profesionales</span></a></li>
 		<li><a href="/turnos"><span>Turnos</span></a></li>
 
 		<li class="pi-has-dropdown"><a href="#"><span>Padle</span></a>
@@ -196,6 +197,7 @@
 
 
 		<li><a href="http://vender.virasorovirtual.com">Clasificados</a></li>
+		<li><a href="/profesionales">Profesionales</a></li>
 
 
 

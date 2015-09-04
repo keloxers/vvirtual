@@ -118,6 +118,11 @@ Route::group(['before' => 'auth|standardUser'], function()
 		Route::get('/clasificados/{id}/espera', 'ClasificadosController@espera');
 		Route::get('/clasificados', 'ClasificadosController@index');
 
+		Route::get('/profesionals/{id}/publicar', 'ProfesionalsController@publicar');
+		Route::get('/profesionals/{id}/espera', 'ProfesionalsController@espera');
+		Route::get('/profesionals', 'ProfesionalsController@index');
+
+
 
 });
 
@@ -150,6 +155,34 @@ Route::get('/articulo/{url_seo}', 'ArticulosController@show');
 Route::get('/', array('as' => 'home', 'uses' => 'ArticulosController@index'));
 
 Route::resource('clasificadoscategorias', 'ClasificadoscategoriasController');
+
+
+
+
+Route::get( '/profesionales', array(
+		'as' => 'profesionals.showcategorias',
+		'uses' => 'ProfesionalsController@showcategorias'
+) );
+
+Route::get( '/profesionales/{profesionalscategoria}', array(
+		'as' => 'profesionals.showall',
+		'uses' => 'ProfesionalsController@showall'
+) );
+
+Route::get( '/profesionales/show/{id}', array(
+		'as' => 'profesionals.showprofesional',
+		'uses' => 'ProfesionalsController@showprofesional'
+) );
+
+
+
+
+
+
+
+
+
+
 
 Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 
