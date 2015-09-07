@@ -26,9 +26,13 @@ class ProfesionalsController extends BaseController {
 	*
 	* @return Response
 	*/
-	public function create()
+	public function create($id)
 	{
-		return View::make('clasificados.create');
+		$profesionalscategorias_id = $id;
+
+		$profesionalscategoria = Profesionalscategoria::find($id);
+
+		return View::make('profesionals.create', array('profesionalscategorias_id' => $profesionalscategorias_id, 'profesionalscategoria' => $profesionalscategoria->profesionalscategoria));
 	}
 
 	/**
@@ -46,86 +50,39 @@ class ProfesionalsController extends BaseController {
 		// 'categorias_id' => 'exists:rubros,id'
 
 		$rules = [
-			'clasificado' => 'required',
-			'precio' => 'required',
+			'profesionalscategorias_id' => 'required',
+			'profesional' => 'required',
+			'email' => 'required',
 			'telefono' => 'required',
 
 		];
 
 
-		if (! Clasificado::isValid(Input::all(),$rules)) {
+		if (! Profesional::isValid(Input::all(),$rules)) {
 
-			return Redirect::back()->withInput()->withErrors(Clasificado::$errors);
+			return Redirect::back()->withInput()->withErrors(Profesional::$errors);
 
 		}
 
-		$clasificado = new Clasificado;
+		$profesional = new Profesional;
 
 		//$clasificado->users_id = Sentry::getUser()->id;
-		$clasificado->users_id = 1;
-		$clasificado->operacion = Input::get('operacion');
-		$clasificado->clasificadoscategorias_id = Input::get('clasificadoscategorias_id');
-		$clasificado->clasificado = Input::get('clasificado');
-		$clasificado->precio = Input::get('precio');
+		$profesional->profesionalscategorias_id = Input::get('profesionalscategorias_id');
+		$profesional->profesional = Input::get('profesional');
+		$profesional->descripcion = Input::get('descripcion','');
+		$profesional->direccion = Input::get('direccion','');
+		$profesional->facebook = Input::get('facebook','');
+		$profesional->twitter = Input::get('twitter','');
+		$profesional->email = Input::get('email','');
+		$profesional->instagram = Input::get('instagram','');
+		$profesional->telefono = Input::get('telefono','');
+		$profesional->horarioatencion = Input::get('horarioatencion','');
+		$profesional->estado = 'publicado';
 
-		if (is_numeric ($clasificado->precio)) {
+		$profesional->save();
 
-		} else {
-			$clasificado->precio = 0;
-		}
+		return Redirect::to('/profesionales/' . Input::get('profesionalscategoria','') );
 
-		$clasificado->telefono = Input::get('telefono');
-		$clasificado->email = Input::get('email');
-		$clasificado->estado = 'espera';
-		$url_seo = Input::get('clasificado');
-		$url_seo = $this->url_slug($url_seo) . date('ljSFY');
-
-		$clasificado->url_seo = $url_seo;
-
-		$clasificado->save();
-
-
-		$file = Input::file('file');
-
-
-		if($file) {
-
-
-			$filename = $file->getClientOriginalName();
-			$extension = $file->getClientOriginalExtension();
-
-			$destinationPath = public_path() . '/uploads/original/';
-			$destinationPath_big = public_path() . '/uploads/big/';
-			$destinationPath_crop = public_path() . '/uploads/crop/';
-
-
-			$upload_success = Input::file('file')->move($destinationPath, $filename);
-
-			if ($upload_success) {
-
-				$image = Image::make($destinationPath . $filename)->resize(800, null, true)->save($destinationPath_big . $filename);
-				$image = Image::make($destinationPath . $filename)->resize(640, null, true)->crop(240, 160, true)->save($destinationPath_crop . $filename);
-
-				File::delete($destinationPath . $filename);
-
-				$arch = new Archivo;
-
-				$arch->archivo = $filename;
-				$arch->descripcion = "";
-				$arch->padre_id = $clasificado->id;
-				$arch->padre = "clasificado";
-
-				$arch->save();
-
-			}
-
-
-
-		}
-
-
-
-		return Redirect::to('/clasificadoscategorias/' . Input::get('clasificadoscategorias_id') );
 
 	}
 
@@ -321,6 +278,7 @@ class ProfesionalsController extends BaseController {
 						return View::make('profesionals.showall', array(
 							'profesionals' => $profesionals,
 							'profesionalscategoria' => $profesionalscategorias->profesionalscategoria,
+							'profesionalscategorias_id' => $profesionalscategorias_id,
 						));
 
 

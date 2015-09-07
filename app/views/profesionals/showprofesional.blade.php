@@ -62,19 +62,26 @@
 					<i class="icon-phone pi-text-base" style="margin-right: 5px;"></i> {{$profesional->telefono}}
 				</p>
 
-				<p>
-					Horario atención: <strong>{{$profesional->horarioatencion}}</strong>
-				</p>
+				@if ($profesional->horarioatencion <> '')
+						<p>
+							Horario atención: <strong>{{$profesional->horarioatencion}}</strong>
+						</p>
+				@endif
 				<br>
 				<p>
-					Redes Sociales: <strong>{{$profesional->horarioatencion}}</strong>
-
+					Redes Sociales:
+				</p>
 
 				<ul class="pi-social-icons pi-jump pi-colored-bg pi-small pi-round pi-padding-top-10  pi-padding-bottom-30">
-					<li><a href="{{$profesional->facebook}}" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
-					<li><a href="{{$profesional->twitter}}" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
-					<li><a href="{{$profesional->instagram}}" class="pi-social-icon-instagram"><i class="icon-instagram"></i></a></li>
-
+					@if ($profesional->facebook <> '')
+							<li><a href="{{$profesional->facebook}}" class="pi-social-icon-facebook"><i class="icon-facebook"></i></a></li>
+					@endif
+					@if ($profesional->twitter <> '')
+							<li><a href="{{$profesional->twitter}}" class="pi-social-icon-twitter"><i class="icon-twitter"></i></a></li>
+					@endif
+					@if ($profesional->instagram <> '')
+							<li><a href="{{$profesional->instagram}}" class="pi-social-icon-instagram"><i class="icon-instagram"></i></a></li>
+					@endif
 				</ul>
 </p>
 			</div>

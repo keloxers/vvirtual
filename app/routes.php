@@ -77,19 +77,14 @@ Route::group(['before' => 'auth|standardUser'], function()
 		Route::resource('contactos', 'ContactosController');
 		Route::get('/contactos/{id}/delete', 'ContactosController@destroy');
 
-
-
 		Route::get('/articulos/ver', 'ArticulosController@ver');
 		Route::get('/articulos/{id}/delete', 'ArticulosController@destroy');
 		Route::get('/articulos/{id}/publicar', 'ArticulosController@publicar');
 
 		Route::get('/articulos/{id}/archivos/{padre}', 'ArchivosController@index');
 
-
 		Route::resource('archivos', 'ArchivosController');
 		Route::get('/archivos/{id}/delete', 'ArchivosController@destroy');
-
-
 
 		Route::resource('articulos', 'ArticulosController');
 
@@ -113,11 +108,17 @@ Route::group(['before' => 'auth|standardUser'], function()
 		Route::resource('banners', 'BannersController');
 		Route::get('/banners/{id}/delete', 'BannersController@destroy');
 
+
 		Route::get('/clasificados/{id}/delete', 'ClasificadosController@destroy');
 		Route::get('/clasificados/{id}/publicar', 'ClasificadosController@publicar');
 		Route::get('/clasificados/{id}/espera', 'ClasificadosController@espera');
 		Route::get('/clasificados', 'ClasificadosController@index');
 
+		Route::get('/profesionals/{id}/create', 'ProfesionalsController@create');
+		Route::post( '/profesionals/store', array(
+				'as' => 'profesionals.store',
+				'uses' => 'ProfesionalsController@store'
+		) );
 		Route::get('/profesionals/{id}/publicar', 'ProfesionalsController@publicar');
 		Route::get('/profesionals/{id}/espera', 'ProfesionalsController@espera');
 		Route::get('/profesionals', 'ProfesionalsController@index');

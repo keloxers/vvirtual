@@ -11,6 +11,9 @@
 			<ul>
 				<li><a href="/profesionales/">Profesionales</a></li>
 				<li>{{$profesionalscategoria}}</li>
+				@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
+					<li><a href="/profesionals/{{$profesionalscategorias_id}}/create">Nuevo</a></li>
+				@endif
 			</ul>
 		</div>
 	</div>
