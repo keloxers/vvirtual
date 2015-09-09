@@ -86,6 +86,16 @@
           </div>
           <!-- End message form -->
 
+          <!-- First name form -->
+          <div class="form-group">
+            <label for="titular">Tags</label>
+
+            <div class="pi-input-with-icon">
+              <div class="pi-input-icon"><i class="icon-pencil"></i></div>
+              {{ Form::text('tags', $articulo->tags, array('class' => 'form-control', 'id' => 'tags', 'placeholder' => 'Ingrese el tags')) }}
+            </div>
+          </div>
+          <!-- End first name form -->
 
 
           <hr class="pi-divider-gap-10">

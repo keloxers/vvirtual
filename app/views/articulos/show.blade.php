@@ -124,6 +124,22 @@
 				</p>
 
 
+				<!-- Row -->
+						<div class="pi-row">
+
+							<!-- Col 10 -->
+							<div class="pi-col-sm-10 pi-col-sm-offset-1 pi-padding-bottom-60">
+								<p class="lead-30 pi-text-dark pi-text-center">
+									Usa en hashtag <span class="pi-text-bg-base">#{{$articulo->tags}}</span> para hablar del tema en las redes sociales
+								</p>
+							</div>
+							<!-- End col 10 -->
+
+						</div>
+						<!-- End row -->
+
+
+
 
 				<?php if ($articulo->comentarios == 'si') { ?>
 
