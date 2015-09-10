@@ -94,16 +94,16 @@
 					</div>
 					<!-- End message form -->
 
-					<!-- Message -->
+					<!-- First name form -->
 					<div class="form-group">
-						<label for="copete">Tags</label>
+						<label for="titular">Tags</label>
 
 						<div class="pi-input-with-icon">
 							<div class="pi-input-icon"><i class="icon-pencil"></i></div>
-							<textarea class="form-control" id="tags" name="tags" placeholder="Tags " rows="4"></textarea>
+							{{ Form::text('tags', '#VirasoroVirtual', array('class' => 'form-control', 'id' => 'tags', 'name' => 'tags', 'placeholder' => 'Ingrese Tags')) }}
 						</div>
 					</div>
-					<!-- End message form -->
+					<!-- End first name form -->
 
 
 					<hr class="pi-divider-gap-10">

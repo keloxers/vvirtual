@@ -130,6 +130,7 @@ public function ver()
 		$articulo->categorias_id = Input::get('categorias_id');
 		$url_seo = Input::get('articulo');
 		$articulo->estado = 'nuevo';
+		$articulo->tags = Input::get('tags');
 
 		//$url_seo = $this->url_slug($url_seo) . implode("-",getdate());
 		$url_seo = $this->url_slug($url_seo) . date('ljSFY');
@@ -240,6 +241,7 @@ public function ver()
 		$articulo->copete = Input::get('copete');
 		$articulo->tipo = Input::get('tipo');
 		$articulo->texto = Input::get('texto');
+		$articulo->tags = Input::get('tags');
 
 		$articulo->save();
 
