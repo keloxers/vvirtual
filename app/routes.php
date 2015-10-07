@@ -128,9 +128,7 @@ Route::group(['before' => 'auth|standardUser'], function()
 });
 
 
-
-
-
+Route::get('/categorias/{id}', 'ArticulosController@categorias');
 
 // Route::resource('clasificados', 'ClasificadosController');
 

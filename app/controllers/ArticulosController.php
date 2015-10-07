@@ -438,4 +438,75 @@ public function publicar($id)
 		}
 
 
+
+
+
+
+
+		public function categorias($id)
+		{
+
+
+	        $articulo_tapa = DB::table('articulos')
+														->where('estado', '=', 'publicado')
+														->where('tipo', '=', 'principal')
+														->orderBy('id', 'desc')
+														->first();
+
+					$articulos = DB::table('articulos')
+														->where('estado', '=', 'publicado')
+														->where('categorias_id', '=', $id)
+														->orderBy('id', 'desc')->paginate(16);
+
+					$articulos_masvistos = DB::table('articulos')
+														->where('estado', '=', 'publicado')
+														->where('created_at', '>=', new DateTime('-10 days'))
+														->orderBy('visitas', 'desc')
+														->paginate(4);
+
+					$categorias = DB::table('categorias')
+														->orderBy('categoria', 'asc')
+														->get();
+
+					$banners_smalls = DB::table('banners')
+											->where('posicion', '=', 'homesmall')
+											->get();
+
+
+					$clasificados = DB::table('clasificados')
+														->where('estado', '=', 'publicado')
+														->orderBy('id', 'desc')->paginate(30);
+
+
+					$encuesta = DB::table('encuestas')
+														->where('activo', '=', 'si')
+														->orderBy('id', 'desc')
+														->first();
+					if ($encuesta) {
+							$respuestas = DB::table('respuestas')
+															->where('encuestas_id', '=', $encuesta->id)
+															->orderBy('id')
+															->get();
+					} else {
+							$respuestas = "";
+					}
+
+	        return View::make('home', array('articulo_tapa' => $articulo_tapa,
+																					'articulos' => $articulos,
+																					'articulos_masvistos' => $articulos_masvistos,
+																					'categorias' => $categorias,
+																					'banners_smalls' => $banners_smalls,
+																					'clasificados' => $clasificados,
+																					'encuesta' => $encuesta,
+																					'respuestas' => $respuestas
+										));
+
+		}
+
+
+
+
+
+
+
 }
