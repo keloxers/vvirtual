@@ -32,176 +32,273 @@
 
 
 
+@if (count($articulo_tapa))
+
+
+
+<?php
+
+	$archivos = DB::table('archivos')
+	->where('padre', '=', 'articulo')
+	->where('padre_id', '=', $articulo_tapa->id)
+	->first();
+
+	if (preg_match('/^.{1,220}\b/s', $articulo_tapa->copete, $match))
+	{
+		$texto = $match[0] . " ...";
+	}
+	$categoria = Categoria::find($articulo_tapa->categorias_id);
+?>
+
 
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
-<div class="pi-section-w pi-section-white">
+<div class="tp-banner-container">
+<div class="tp-banner pi-revolution-slider" >
+<ul class="">
+
+<!-- SLIDE -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1000" >
+<!-- MAIN IMAGE -->
+
+@if ($archivos)
+		<img src="/uploads/big/{{$archivos->archivo}}"  alt="imagen"  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+@endif
+<!-- LAYERS -->
+
+
+<!-- LAYER NR. 3 -->
+<div class="tp-caption sft str"
+	 data-x="25" data-hoffset="0"
+	 data-y="320"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 5; font-size: 34px; color: #21252b; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; line-height: 40px; background: rgba(255, 255, 255, 0.5); padding: 12px 16px; border-radius: 3px; box-shadow: 0 1px 1px rgba(0,0,0,0.15);">
+	 {{ $articulo_tapa->articulo }}
+</div>
+
+<!-- LAYER NR. 4 -->
+<div class="tp-caption sfl str"
+	 data-x="25" data-hoffset="0"
+	 data-y="386"
+	 data-speed="500"
+	 data-start="2600"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 6; font-size: 20px; color: #fff; font-weight: 300; line-height: 28px; background: rgba(33, 37, 43, 0.6); padding: 12px 16px; border-radius: 3px;">
+	 {{ $texto }} <a href="/articulos/show/{{ $articulo_tapa->url_seo }}" class="btn pi-btn-base pi-btn-small">
+		Leer
+	</a>
+
+</div>
+
+
+</li>
+
+
+
+</ul>
+
+</div>
+</div>
+
+@endif
+
+
+
+
+
+@if (Auditoriavoto::voto())
+<br>
+
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-shadow-inside-top pi-section-base">
+	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
 	<div class="pi-section">
 
+		<!-- Row -->
 		<div class="pi-row">
 
-			<div class="pi-col-sm-9">
+			<!-- Col 8 -->
+			<div class="pi-col-sm-12 pi-text-left pi-center-text-sm">
+				<p class="lead-30 pi-text-white">
+					{{$encuesta->encuesta}} <span class="pi-weight-400">?</span>
+				</p>
+			</div>
+			<!-- End col 8 -->
 
-			<div class="pi-row pi-padding-bottom-20 isotope" data-isotope-mode="masonry">
-
-
-
-				@foreach ($articulos as $articulo)
-
-							<?php
-							$texto = $articulo->texto;
-							$archivos = DB::table('archivos')
-							->where('padre', '=', 'articulo')
-							->where('padre_id', '=', $articulo->id)
-							->first();
-
-							if (preg_match('/^.{1,460}\b/s', $articulo->copete, $match))
-							{ $texto = $match[0]; }
-							$categoria = Categoria::find($articulo->categorias_id);
-							?>
-
-
-				<div class="pi-col-xs-6 isotope-item">
-					<div class="pi-portfolio-item pi-portfolio-description-box pi-portfolio-item-round-corners">
-						@if (count($archivos)>0 )
-						<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-							<a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-colorbox cboxElement">
-								<img src="/uploads/big/{{ $archivos->archivo }}" alt="">
-								<div class="pi-img-overlay pi-no-padding pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-icon-dark pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
+			<!-- Col 4 -->
+			<div class="pi-col-sm-12 pi-center-text-sm pi-center-text-sm">
+				<p>
+					@foreach ($respuestas as $respuesta)
+							<a href="/encuestas/votar/{{$respuesta->id}}" class="btn pi-btn-base-2 pi-btn-big">
+								{{$respuesta->respuesta}}
 							</a>
-						</div>
-						@endif
-						<div class="pi-portfolio-description pi-portfolio-description-round-corners">
-
-							<ul class="pi-portfolio-cats">
-								<li><i class="icon-clock"></i>{{ $articulo->created_at }}</li>
-								<li><i class="icon-eye"></i>{{ $articulo->visitas }}</li>
-							</ul>
-
-							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
-							</h2>
-
-							<p>{{ $texto }}...</p>
-							<b>{{ $articulo->visitas }} visitas</b><br>
-							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-base pi-btn-small">
-							Leer
-							</a><br>
-
-						</div>
-					</div>
-				</div>
-
-				@endforeach
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+					@endforeach
+				</p>
 			</div>
-
-
-
-
-
-
-
-
-
-
-
-				<div class="pi-pagenav pi-padding-bottom-20">
-
-					{{ $articulos->links()}}
-
-				</div>
-
-			</div>
-
-			<div class="pi-sidebar pi-col-sm-3">
-
-				<!-- Search -->
-				<div class="pi-sidebar-block pi-padding-bottom-60 pi-margin-top-minus-5">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
-						Buscar
-					</h3>
-
-					<script>
-					  (function() {
-					    var cx = '010195671577222309523:zef_etpvv30';
-					    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
-					    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-					        '//www.google.com/cse/cse.js?cx=' + cx;
-					    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
-					  })();
-					</script>
-
-					<!-- Place this tag where you want both of the search box and the search results to render -->
-					<gcse:search></gcse:search>
-
-
-				</div>
-				<!-- End search -->
-
-				<!-- Categories -->
-				<div class="pi-sidebar-block pi-padding-bottom-40">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-15">
-						Categorias
-					</h3>
-					<ul class="pi-list-with-icons pi-list-icons-right-open">
-						@foreach ($categorias as $categoria)
-						<li><a href="/categorias/{{ $categoria->id }}">{{ $categoria->categoria}}</a></li>
-						@endforeach
-					</ul>
-				</div>
-				<!-- End categories -->
-
-
-				<!-- Tweets -->
-				<div class="pi-sidebar-block pi-padding-bottom-40">
-					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
-						Ultimos Tweets
-					</h3>
-					<a class="twitter-timeline" href="https://twitter.com/virasorovirtual" data-widget-id="457138837286699008">Tweets por @virasorovirtual</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-				</div>
-				<!-- End tweets -->
-
-
-			</div>
+			<!-- End col 4 -->
 
 		</div>
-
-
-
+		<!-- End row -->
 
 	</div>
 </div>
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
+
+@endif
+
+
+
+
+
+@if (Sentry::check() && Sentry::getUser()->hasAccess('admin') && $encuesta)
+
+<br>
+<link rel="stylesheet" type="text/css" href="/css/counters.css"/>
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url(img_external/gallery/modern-skyscraper.jpg);">
+	<div class="pi-texture pi-section-overlay-base"></div>
+	<div class="pi-section pi-padding-top-50 pi-padding-bottom-20">
+
+		<div class="pi-text-center pi-padding-bottom-20">
+			<h6 class="pi-uppercase pi-letter-spacing-3">
+				{{$encuesta->encuesta}}
+			</h6>
+		</div>
+
+		<?php $votos = DB::table('auditoriavotos')->where('encuestas_id', $encuesta->id)->count(); ?>
+
+
+		@if ($votos > 0)
+						<!-- Row -->
+						<div class="pi-row pi-grid-small-margins pi-text-center">
+
+							<?php $i=intval(12 / count($respuestas)); ?>
+
+							@foreach ($respuestas as $respuesta)
+
+							<?php
+
+							$voto = DB::table('auditoriavotos')->where('respuestas_id', $respuesta->id)->count();
+
+							$voto = number_format(($voto * 100 / $votos),2);
+
+							?>
+
+							<!-- Col 3 -->
+							<div class="pi-col-sm-{{$i}} pi-col-2xs-6 pi-padding-bottom-20">
+								<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="230" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
+									<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-600 pi-text-shadow">
+
+										<p>
+											<i class="icon-thumbs-up"></i>
+										</p>
+										<div class="pi-counter-number">{{$voto}} %</div>
+
+									</div>
+									<p class="lead-18">{{$respuesta->respuesta}}</p>
+								</div>
+							</div>
+							<!-- End col 3 -->
+
+							@endforeach
+
+
+						</div>
+						<!-- End row -->
+			@endif
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+
+
+
+
+
+
+
+
+
+
+
+@endif
+
+
+
+
+
+<div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+	<div class="pi-section-w pi-section-white">
+		<div class="pi-section">
+			<div class="pi-row pi-padding-bottom-10 isotope" data-isotope-mode="masonry">
+				@foreach ($articulos as $articulo)
+				<?php
+				$texto = $articulo->texto;
+				$archivos = DB::table('archivos')
+				->where('padre', '=', 'articulo')
+				->where('padre_id', '=', $articulo->id)
+				->first();
+
+				if (preg_match('/^.{1,460}\b/s', $articulo->copete, $match))
+				{ $texto = $match[0]; }
+				$categoria = Categoria::find($articulo->categorias_id);
+				?>
+
+				<div class="pi-col-sm-4 pi-col-xs-6 isotope-item">
+					<div class="pi-portfolio-item pi-portfolio-item-round-corners">
+						@if (count($archivos)>0 )
+						<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
+							<a href="/articulos/show/{{ $articulo->url_seo }}">
+								<img src="/uploads/big/{{ $archivos->archivo }}" alt="">
+							</a>
+						</div>
+						@endif
+						<div class="pi-portfolio-description pi-portfolio-description-round-corners-all" style="border-top-width: 1px;">
+							<ul class="pi-portfolio-cats">
+								<li><i class="icon-clock"></i>{{ $articulo->created_at }}</li>
+								@if (Sentry::check() && Sentry::getUser()->hasAccess('admin'))
+								<li><a href="/articulos/{{$articulo->id}}/edit">Editar</a></li>
+								@endif
+							</ul>
+							<h2 class="h4"><a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-link-no-style">{{ $articulo->articulo }}</a>
+							</h2>
+							<p>{{ $texto }} ...</p>
+							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-base pi-btn-small">
+							Leer
+						</a><br>
+							<b>{{ $articulo->visitas }} visitas</b>
+
+						</div>
+					</div>
+					<hr class="pi-divider pi-divider-dashed pi-divider-big">
+
+				</div>
+
+
+
+				@endforeach
+
+			</div>
+
+			<div class="pi-pagenav pi-text-center">
+				{{ $articulos->links()}}
+			</div>
+
+		</div>
+
+	</div>
 
 
 

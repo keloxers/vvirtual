@@ -22,6 +22,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/boxes.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/pricing-tables.css"/>
 
+	<script type="text/javascript" src="/js/instafeed.min.js"></script>
+
 
 
 	<!--Fonts-->
@@ -563,6 +565,7 @@
 <script src="/3dParty/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
 <script src="/3dParty/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <script src="/scripts/pi.init.revolutionSlider.js"></script>
+
 
 
 		<script>
