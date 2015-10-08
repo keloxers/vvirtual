@@ -66,15 +66,8 @@
 					<div class="pi-portfolio-item pi-portfolio-description-box pi-portfolio-item-round-corners">
 						@if (count($archivos)>0 )
 						<div class="pi-img-w pi-img-round-corners pi-img-hover-zoom">
-							<a href="/articulos/show/{{ $articulo->url_seo }}" class="pi-colorbox cboxElement">
+							<a href="/articulos/show/{{ $articulo->url_seo }}">
 								<img src="/uploads/big/{{ $archivos->archivo }}" alt="">
-								<div class="pi-img-overlay pi-no-padding pi-img-overlay-dark">
-									<div class="pi-caption-centered">
-										<div>
-											<span class="pi-caption-icon pi-caption-icon-dark pi-caption-scale icon-search"></span>
-										</div>
-									</div>
-								</div>
 							</a>
 						</div>
 						@endif
