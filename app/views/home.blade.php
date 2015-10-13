@@ -32,6 +32,41 @@
 
 
 
+<?php
+
+$fecha=date("Y-m-d");
+
+$turno = DB::table('turnos')
+					->where('fecha', '=', $fecha)
+					->first();
+if ($turno) {
+
+?>
+
+<!-- Title bar -->
+<div class="pi-section-w pi-section-base pi-section-base-gradient">
+	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+	<div class="pi-section" style="padding: 15px 40px 12px;">
+
+		<div class="pi-row">
+			<div class="pi-col-sm-8 pi-center-text-xs">
+				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">
+					Farmacia de Turno: {{ $turno->turno }}
+				</h1>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- End title bar -->
+
+<?php
+				}
+?>
+
+
+
+
 
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
@@ -206,9 +241,8 @@
 		<div class="pi-section" style="padding: 15px 40px 12px;">
 
 			<div class="pi-row">
-				<div class="pi-col-sm-8 pi-center-text-xs"><a href="http://vender.virasorovirtual.com">
-					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Clasificados</h1>
-				</a>
+				<div class="pi-col-sm-12 pi-center-text-xs">
+					<h1 class="h2 pi-weight-300 pi-margin-bottom-5">Gracias a estras empresas Ud. puede leer las noticas de VirasoroVirtual.com</h1>
 				</div>
 			</div>
 
@@ -239,40 +273,6 @@
 </div>
 <!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
 
-
-
-
-<?php
-
-$fecha=date("Y-m-d");
-
-$turno = DB::table('turnos')
-					->where('fecha', '=', $fecha)
-					->first();
-if ($turno) {
-
-?>
-
-<!-- Title bar -->
-<div class="pi-section-w pi-section-base pi-section-base-gradient">
-	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
-	<div class="pi-section" style="padding: 15px 40px 12px;">
-
-		<div class="pi-row">
-			<div class="pi-col-sm-8 pi-center-text-xs">
-				<h1 class="h2 pi-weight-300 pi-margin-bottom-5">
-					Farmacia de Turno: {{ $turno->turno }}
-				</h1>
-			</div>
-		</div>
-
-	</div>
-</div>
-<!-- End title bar -->
-
-<?php
-				}
-?>
 
 
 

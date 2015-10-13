@@ -86,9 +86,15 @@
 
 		<!-- Phone -->
 		<div class="pi-header-block pi-header-block-txt">
-			<i class="pi-header-block-icon icon-phone pi-icon-base pi-icon-square"></i>Whastapp: <strong>+54 3756 610566</strong>
+			<img src="/img/vvwhastsapp.png" alt=""></i> Whastapp red de noticias <strong>3756 610566</strong>
 		</div>
 		<!-- End phone -->
+
+		<div class="pi-header-block pi-header-block-txt">
+				<img src="/img/vvgoogleplay.png" alt=""></i> Descarga nuestra <a href="https://play.google.com/store/apps/details?id=com.codexcontrol.virasorovirtual&hl=es_419"><strong>Aplicacion Android</strong></a>
+		</div>
+
+
 
 		<!-- Radio
 		<div class="pi-header-block pi-header-block-txt">
