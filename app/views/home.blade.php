@@ -108,7 +108,7 @@ $categoria = Categoria::find($articulo->categorias_id);
 <!-- LAYER NR. 4 -->
 <div class="tp-caption sft str"
 	 data-x="45" data-hoffset="0"
-	 data-y="300"
+	 data-y="310"
 	 data-speed="500"
 	 data-start="2800"
 	 data-easing="Back.easeInOut"
