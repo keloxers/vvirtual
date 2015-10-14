@@ -63,6 +63,24 @@ $categoria = Categoria::find($articulo->categorias_id);
 <!-- LAYERS -->
 
 
+@if (count($archivos)>0 )
+<!-- LAYER NR. 1 -->
+<div class="tp-caption sfb"
+	 data-x="583"
+	 data-y="60"
+	 data-speed="800"
+	 data-start="1500"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 1">
+	 <a href="/articulos/show/{{ $articulo->url_seo }}">
+		 <img src="/uploads/crop/{{ $archivos->archivo }}" alt="">
+	 </a>
+</div>
+@endif
+
 <!-- LAYER NR. 2 -->
 <div class="tp-caption sft str"
 	 data-x="45" data-hoffset="0"
@@ -78,7 +96,7 @@ $categoria = Categoria::find($articulo->categorias_id);
 <!-- LAYER NR. 3 -->
 <div class="tp-caption sft str"
 	 data-x="45" data-hoffset="0"
-	 data-y="358"
+	 data-y="458"
 	 data-speed="500"
 	 data-start="2600"
 	 data-easing="Back.easeInOut"
