@@ -76,7 +76,7 @@ $categoria = Categoria::find($articulo->categorias_id);
 	 data-captionhidden="on"
 	 style="z-index: 1">
 	 <a href="/articulos/show/{{ $articulo->url_seo }}">
-		 <img src="/uploads/big/{{ $archivos->archivo }}" alt="">
+		 <img src="/uploads/crop/{{ $archivos->archivo }}" alt="">
 	 </a>
 </div>
 @endif
