@@ -235,9 +235,11 @@ if ($turno) {
 
 							<p>{{ $texto }}...</p>
 							<b>{{ $articulo->visitas }} visitas</b><br>
-							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-base pi-btn-small">
-							Leer
-							</a><br>
+							
+							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-turquoise">
+					 			<i class="icon-book-open pi-icon-left"></i> Leer
+					 		</a>
+							<br>
 
 						</div>
 					</div>
