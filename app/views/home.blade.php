@@ -115,7 +115,7 @@ $categoria = Categoria::find($articulo->categorias_id);
 	 data-endspeed="300"
 	 style="z-index: 6;">
 	 <a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-turquoise">
-		<i class="icon-briefcase pi-icon-left"></i> Leer
+		<i class="icon-book-open pi-icon-left"></i> Leer
 	</a>
 </div>
 
