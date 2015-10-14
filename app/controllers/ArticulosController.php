@@ -18,7 +18,7 @@ class ArticulosController extends BaseController {
 													->where('estado', '=', 'publicado')
 													->where('tipo', '=', 'principal')
 													->orderBy('id', 'desc')
-													->first();
+													->paginate(3);
 
 				$articulos = DB::table('articulos')
 													->where('estado', '=', 'publicado')
