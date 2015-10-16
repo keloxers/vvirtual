@@ -185,6 +185,134 @@ if ($turno) {
 
 
 
+@if (Auditoriavoto::voto())
+<br>
+
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-shadow-inside-top pi-section-base">
+	<div class="pi-texture" style="background: url(img/hexagon.png) repeat;"></div>
+	<div class="pi-section">
+
+		<!-- Row -->
+		<div class="pi-row">
+
+			<!-- Col 8 -->
+			<div class="pi-col-sm-12 pi-text-left pi-center-text-sm">
+				<p class="lead-30 pi-text-white">
+					{{$encuesta->encuesta}} <span class="pi-weight-400">?</span>
+				</p>
+			</div>
+			<!-- End col 8 -->
+
+			<!-- Col 4 -->
+			<div class="pi-col-sm-12 pi-center-text-sm pi-center-text-sm">
+				<p>
+					@foreach ($respuestas as $respuesta)
+							<a href="/encuestas/votar/{{$respuesta->id}}" class="btn pi-btn-base-2 pi-btn-big">
+								{{$respuesta->respuesta}}
+							</a>
+					@endforeach
+				</p>
+			</div>
+			<!-- End col 4 -->
+
+		</div>
+		<!-- End row -->
+
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - --></div>
+
+@endif
+
+
+
+
+
+@if (Sentry::check() && Sentry::getUser()->hasAccess('admin') && $encuesta)
+
+<br>
+<link rel="stylesheet" type="text/css" href="/css/counters.css"/>
+
+<!-- - - - - - - - - - SECTION - - - - - - - - - -->
+
+<div class="pi-section-w pi-section-parallax" style="background-image: url(img_external/gallery/modern-skyscraper.jpg);">
+	<div class="pi-texture pi-section-overlay-base"></div>
+	<div class="pi-section pi-padding-top-50 pi-padding-bottom-20">
+
+		<div class="pi-text-center pi-padding-bottom-20">
+			<h6 class="pi-uppercase pi-letter-spacing-3">
+				{{$encuesta->encuesta}}
+			</h6>
+		</div>
+
+		<?php $votos = DB::table('auditoriavotos')->where('encuestas_id', $encuesta->id)->count(); ?>
+
+
+		@if ($votos > 0)
+						<!-- Row -->
+						<div class="pi-row pi-grid-small-margins pi-text-center">
+
+							<?php $i=intval(12 / count($respuestas)); ?>
+
+							@foreach ($respuestas as $respuesta)
+
+							<?php
+
+							$voto = DB::table('auditoriavotos')->where('respuestas_id', $respuesta->id)->count();
+
+							$voto = number_format(($voto * 100 / $votos),2);
+
+							?>
+
+							<!-- Col 3 -->
+							<div class="pi-col-sm-{{$i}} pi-col-2xs-6 pi-padding-bottom-20">
+								<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="230" data-easing="easeInCirc" data-duration="1000" data-frames-per-second="0">
+									<div class="pi-counter-count pi-counter-count-big pi-text-white pi-weight-600 pi-text-shadow">
+
+										<p>
+											<i class="icon-thumbs-up"></i>
+										</p>
+										<div class="pi-counter-number">{{$voto}} %</div>
+
+									</div>
+									<p class="lead-18">{{$respuesta->respuesta}}</p>
+								</div>
+							</div>
+							<!-- End col 3 -->
+
+							@endforeach
+
+
+						</div>
+						<!-- End row -->
+			@endif
+	</div>
+</div>
+
+<!-- - - - - - - - - - END SECTION - - - - - - - - - -->
+
+
+
+
+
+
+
+
+
+
+
+
+@endif
+
+
+
+
+
+
 
 <div id="page"><!-- - - - - - - - - - SECTION - - - - - - - - - -->
 
@@ -235,7 +363,7 @@ if ($turno) {
 
 							<p>{{ $texto }}...</p>
 							<b>{{ $articulo->visitas }} visitas</b><br>
-							
+							you
 							<a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-turquoise">
 					 			<i class="icon-book-open pi-icon-left"></i> Leer
 					 		</a>
