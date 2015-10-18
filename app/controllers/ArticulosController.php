@@ -167,9 +167,26 @@ public function ver()
 		$articulo = Articulo::find($id);
 
 		$valor=rand(1, 3);
+
+		if ($articulo->visitas==0 and $articulo->categorias_id==14) {
+				$articulo->created_at = $articulo->updated_at;
+
+				$arch = new Archivo;
+
+				$arch->archivo = "flor-negra-0a018d4e-acec-4890-9469-299fbd257a1b (1) (1).jpg";
+				$arch->descripcion = "Fallecimiento";
+				$arch->padre_id = $id;
+				$arch->padre = "articulo";
+				$arch->save();
+
+		}
+
 		$articulo->visitas = $articulo->visitas + $valor;
+
 		$articulo->save();
 		$categoria = Categoria::find($articulo->categorias_id);
+
+
 
 		$archivos = DB::table('archivos')
 			->where('padre', '=', 'articulo')
