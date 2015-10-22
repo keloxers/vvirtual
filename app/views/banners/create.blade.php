@@ -105,8 +105,10 @@
 							{{ Form::select('posicion', array(
 							'homebig' => 'Home Big',
 							'homesmall' => 'Home Small',
+							'homelateral' => 'Home Lateral',
 							'articulobig' => 'Articulo big',
 							'articulosmall' => 'Articulo Small'
+							'articuloslateral' => 'Articulo Lateral'
 							), 'homebig', array('class' => 'form-control input-lg', 'id' =>'posicion')) }}
 
 					</div>
