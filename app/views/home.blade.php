@@ -464,6 +464,17 @@ if ($turno) {
 				</div>
 				<!-- End tweets -->
 
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- lateralVV300x600 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-0796827730614625"
+     data-ad-slot="5943085626"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
 
 			</div>
 
