@@ -107,7 +107,7 @@
 							'homesmall' => 'Home Small',
 							'homelateral' => 'Home Lateral',
 							'articulobig' => 'Articulo big',
-							'articulosmall' => 'Articulo Small'
+							'articulosmall' => 'Articulo Small',
 							'articuloslateral' => 'Articulo Lateral'
 							), 'homebig', array('class' => 'form-control input-lg', 'id' =>'posicion')) }}
 
