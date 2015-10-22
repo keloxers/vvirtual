@@ -477,6 +477,46 @@ if ($turno) {
 								</script>
 				</div>
 
+
+
+
+
+
+
+
+
+
+				<div class="pi-sidebar-block pi-padding-bottom-40">
+							<?php
+							$banner = new Banner();
+							$imagen = $banner->imprimir('homelateral');
+
+							?>
+							@if ($imagen[0]<>"")
+							<!-- Title bar -->
+
+							<div class="pi-row">
+								<div class="pi-section-w pi-center-text-xs pi-text-center">
+
+									<a href="{{$imagen[1]}}"><img src="{{$imagen[0]}}" alt=""></a>
+								</div>
+							</div>
+
+							<!-- End title bar -->
+							@endif
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
 			</div>
 
 		</div>
