@@ -506,7 +506,7 @@ if ($turno) {
 
 									</div>
 								</div>
-
+								<br>
 								@endforeach
 				</div>
 
