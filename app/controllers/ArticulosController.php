@@ -38,6 +38,10 @@ class ArticulosController extends BaseController {
 										->where('posicion', '=', 'homesmall')
 										->get();
 
+				$banners_lateral = DB::table('banners')
+										->where('posicion', '=', 'homelateral')
+										->get();
+
 
 				$clasificados = DB::table('clasificados')
 													->where('estado', '=', 'publicado')
@@ -62,6 +66,7 @@ class ArticulosController extends BaseController {
 																				'articulos_masvistos' => $articulos_masvistos,
 																				'categorias' => $categorias,
 																				'banners_smalls' => $banners_smalls,
+																				'banners_lateral' => $banners_lateral,
 																				'clasificados' => $clasificados,
 																				'encuesta' => $encuesta,
 																				'respuestas' => $respuestas

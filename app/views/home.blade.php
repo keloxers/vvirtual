@@ -486,25 +486,30 @@ if ($turno) {
 
 
 
+
+
 				<div class="pi-sidebar-block pi-padding-bottom-40">
-							<?php
-							$banner = new Banner();
-							$imagen = $banner->imprimir('homelateral');
 
-							?>
-							@if ($imagen[0]<>"")
-							<!-- Title bar -->
+								@foreach ($banners_lateral as $banner)
 
-							<div class="pi-row">
-								<div class="pi-section-w pi-center-text-xs pi-text-center">
+								<div class="pi-row">
+									<div class="pi-section-w pi-center-text-xs pi-text-center">
 
-									<a href="{{$imagen[1]}}"><img src="{{$imagen[0]}}" alt=""></a>
+
+												@if ($banner->link <> "")
+														<a href="{{ $banner->link }}">
+												@endif
+												<img src="/publicidades/{{ $banner->file }}" alt="">
+												@if ($banner->link <> "")
+													</a>
+												@endif
+
+									</div>
 								</div>
-							</div>
 
-							<!-- End title bar -->
-							@endif
+								@endforeach
 				</div>
+
 
 
 
