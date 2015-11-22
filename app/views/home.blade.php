@@ -7,7 +7,7 @@
 
 		<div class="pi-text-center">
 			<h1 class="pi-uppercase pi-weight-700 pi-has-border pi-has-tall-border pi-has-short-border pi-margin-bottom-70">
-				Resultados parciales de<br>Virasoro Corrientes
+				Resultados FINALES en<br>Virasoro Corrientes
 			</h1>
 		</div>
 
@@ -22,7 +22,7 @@
 			<!-- Counters item -->
 			<div class="pi-col-lg-3">
 				<div class="pi-box pi-border pi-shadow2">
-					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="8129" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="11162" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
 						<div class="pi-counter-count pi-counter-count-big">
 
 							<p>
@@ -42,7 +42,7 @@
 			<!-- Counters item -->
 			<div class="pi-col-lg-3">
 				<div class="pi-box pi-border pi-shadow2">
-					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="6253" data-easing="easeInCirc" data-duration="3000" data-frames-per-second="10">
+					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="8495" data-easing="easeInCirc" data-duration="3000" data-frames-per-second="10">
 						<div class="pi-counter-count pi-counter-count-big">
 
 							<p>
@@ -68,7 +68,7 @@
 
 		<div class="pi-text-center">
 			<h2 class="pi-uppercase pi-weight-700  pi-has-tall-border pi-has-short-border pi-margin-bottom-70">
-				Mesas escrutadas<br> 53 de 71
+				Mesas escrutadas<br> 71 de 71
 			</h2>
 		</div>
 
