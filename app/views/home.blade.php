@@ -22,7 +22,7 @@
 			<!-- Counters item -->
 			<div class="pi-col-lg-3">
 				<div class="pi-box pi-border pi-shadow2">
-					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="473" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
+					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="4729" data-easing="easeInCirc" data-duration="2000" data-frames-per-second="10">
 						<div class="pi-counter-count pi-counter-count-big">
 
 							<p>
@@ -42,7 +42,7 @@
 			<!-- Counters item -->
 			<div class="pi-col-lg-3">
 				<div class="pi-box pi-border pi-shadow2">
-					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="343" data-easing="easeInCirc" data-duration="3000" data-frames-per-second="10">
+					<div class="pi-counter pi-counter-simple" data-count-from="0" data-count-to="3607" data-easing="easeInCirc" data-duration="3000" data-frames-per-second="10">
 						<div class="pi-counter-count pi-counter-count-big">
 
 							<p>
@@ -68,7 +68,7 @@
 
 		<div class="pi-text-center">
 			<h2 class="pi-uppercase pi-weight-700  pi-has-tall-border pi-has-short-border pi-margin-bottom-70">
-				Mesas escrutadas<br> 3 de 71
+				Mesas escrutadas<br> 32 de 71
 			</h2>
 		</div>
 
