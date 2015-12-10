@@ -15,6 +15,9 @@
 
 		<hr class="pi-divider-gap-30">
 
+		Estaremos probando la transmision en Vivo por Streaming.
+
+		<hr class="pi-divider-gap-10">
 
 
 		<!-- End counters -->
