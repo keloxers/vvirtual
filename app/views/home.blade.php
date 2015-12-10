@@ -15,7 +15,7 @@
 
 		<hr class="pi-divider-gap-30">
 
-		Estaremos probando la transmision en Vivo por Streaming.
+		Estaremos probando la transmision en Vivo por Streaming. Entre las 10:00 y las 12:00 hs. Seguinos en Twitter. @virasorovirtual
 
 		<hr class="pi-divider-gap-10">
 
