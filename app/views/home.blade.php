@@ -7,7 +7,7 @@
 
 		<div class="pi-text-center">
 			<h1 class="pi-uppercase pi-weight-700 pi-has-border pi-has-tall-border pi-has-short-border pi-margin-bottom-70">
-				Vivo<br>Salon Bicentenario
+				en Vivo<br>Salon Bicentenario
 			</h1>
 				<script data-mute="false" data-social="true" class="mkEmbedPlayer" data-cover="" data-type="bigsquare" data-username="virasorovirtual" src="http://meerkatapp.co/widgets/embed.js" type="text/javascript"></script>
 		</div>
