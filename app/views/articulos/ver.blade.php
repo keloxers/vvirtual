@@ -64,16 +64,9 @@
 
 														$categoria = Categoria::find($articulo->categorias_id);
 
-														$texto = $articulo->texto;
-														if (preg_match('/^.{1,260}\b/s', $articulo->texto, $match))
-														{
-																$texto = $match[0];
-														}
-
-
 														echo "<tr>";
 												    echo "<td>" . $articulo->articulo . "</td>";
-												    echo "<td>" . $texto . "</td>";
+												    echo "<td>" . $articulo->copete . "</td>";
 														echo "<td>" . $articulo->tipo . "</td>";
 												    echo "<td>" . $articulo->estado . "</td>";
 														echo "<td>" ;
