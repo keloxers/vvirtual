@@ -472,8 +472,9 @@ public function publicar($id)
 	        $articulo_tapa = DB::table('articulos')
 														->where('estado', '=', 'publicado')
 														->where('tipo', '=', 'principal')
+														->where('categorias_id', '=', $id)
 														->orderBy('id', 'desc')
-														->first();
+														->paginate(3);
 
 					$articulos = DB::table('articulos')
 														->where('estado', '=', 'publicado')
@@ -492,6 +493,10 @@ public function publicar($id)
 
 					$banners_smalls = DB::table('banners')
 											->where('posicion', '=', 'homesmall')
+											->get();
+
+					$banners_lateral = DB::table('banners')
+											->where('posicion', '=', 'homelateral')
 											->get();
 
 
@@ -518,6 +523,7 @@ public function publicar($id)
 																					'articulos_masvistos' => $articulos_masvistos,
 																					'categorias' => $categorias,
 																					'banners_smalls' => $banners_smalls,
+																					'banners_lateral' => $banners_lateral,
 																					'clasificados' => $clasificados,
 																					'encuesta' => $encuesta,
 																					'respuestas' => $respuestas
