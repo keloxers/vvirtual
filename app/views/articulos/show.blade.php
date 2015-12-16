@@ -290,7 +290,7 @@
 					<h3 class="h6 pi-uppercase pi-weight-700 pi-letter-spacing pi-has-bg pi-margin-bottom-20">
 						Facebook
 					</h3>
-					<div class="fb-page" data-href="https://www.facebook.com/virasorovirtual" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/virasorovirtual"><a href="https://www.facebook.com/virasorovirtual">VirasoroVirtual</a></blockquote></div></div>
+					<div class="fb-page" data-href="https://www.facebook.com/virasorovirtual" data-tabs="timeline" data-height="1000" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/virasorovirtual"><a href="https://www.facebook.com/virasorovirtual">VirasoroVirtual</a></blockquote></div></div>
 				</div>
 				<!-- End flickr photos -->
 
