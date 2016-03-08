@@ -75,6 +75,23 @@ class ArticulosController extends BaseController {
 	}
 
 
+
+
+	public function buscancallar()
+	{
+
+
+
+
+
+        return View::make('buscancallar', array(
+									));
+
+	}
+
+
+
+
 /**
 * Display a listing of the resource.
 *

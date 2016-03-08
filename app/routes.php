@@ -56,8 +56,8 @@ App::missing(function($exception)
 
 // Index
 Route::get( '/', array(
-		'as' => 'articulos.index',
-		'uses' => 'ArticulosController@index'
+		'as' => 'articulos.buscancallar',
+		'uses' => 'ArticulosController@buscancallar'
 ) );
 
 
@@ -151,7 +151,7 @@ Route::get( '/clasificados/{id}', array(
 Route::get('/articulos/show/{url_seo}', 'ArticulosController@show');
 Route::get('/articulo/{url_seo}', 'ArticulosController@show');
 
-Route::get('/', array('as' => 'home', 'uses' => 'ArticulosController@index'));
+// Route::get('/', array('as' => 'home', 'uses' => 'ArticulosController@index'));
 
 Route::resource('clasificadoscategorias', 'ClasificadoscategoriasController');
 
