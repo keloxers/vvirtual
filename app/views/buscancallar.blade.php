@@ -31,7 +31,7 @@
 
 					<li>
 						<a href="http://www.virasorovirtual.com/articulos/show/cdor-martinez-formulo-descargo-sobre-los-cheques-robadosFriday24thJuly2015" target="_blank">
-						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						<span class="pi-bullet-icon"><i class="icon-link"></i>
 						</span>
 								Cdor. Carlos Martinez (hoy Secretario de Hacienda) brindó las explicaciones de las acciones</a> <br>
 						<span class="pi-smaller-text pi-italic pi-text-opacity-50">24 de Julio de 2015</span>
@@ -39,15 +39,15 @@
 
 					<li>
 						<a href="http://www.digitalsantotome.com.ar/vernota.asp?id_noticia=7631" target="_blank">
-						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						<span class="pi-bullet-icon"><i class="icon-link"></i>
 						</span>
 								Una verdera caja de pandora, Sabio en Santo Tome Digital</a> <br>
-						<span class="pi-smaller-text pi-italic pi-text-opacity-50">Digital Santo Tomé/span>
+						<span class="pi-smaller-text pi-italic pi-text-opacity-50">Digital Santo Tomé</span>
 					</li>
 
 					<li>
 						<a href="http://www.virasorovirtual.com/articulos/show/cheque-br-sabio-desnudo-la-verdadFriday23rdOctober2015" target="_blank">
-						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						<span class="pi-bullet-icon"><i class="icon-link"></i>
 						</span>
 								ROBO DE CHEQUES: SABIO DESNUDO LA VERDAD.
 							</a> <br>
