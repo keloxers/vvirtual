@@ -17,7 +17,7 @@
 
 				<h4 class="pi-margin-bottom-25 pi-weight-700 pi-letter-spacing">
 
-					3 de Febrero de 2016, un día triste para la libertad de prensa en Gdor. Virasoro. El Gobierno Municipal de Blanca Beatriz Pintos, junto a su vice Gustavo Sabio, y la secretaria de gobierno Mirtha del Potro de Kalinak, buscan callar la verdad con el envío de sendas cartas documento a VirasoroVirtual.com por una nota que publicó en el anuario de la Guía Virasoro 2016. Muestran el enojo contra el cumplimiento de la labor de comunicar que lleva este medio artesanal, porque nunca ha aceptado pauta publicitaria oficial para evitar manejos en la publicación de información.
+					3 de Marzo de 2016, un día triste para la libertad de prensa en Gdor. Virasoro. El Gobierno Municipal de Blanca Beatriz Pintos, junto a su vice Gustavo Sabio, y la secretaria de gobierno Mirtha del Potro de Kalinak, buscan callar la verdad con el envío de sendas cartas documento a VirasoroVirtual.com por una nota que publicó en el anuario de la Guía Virasoro 2016. Muestran el enojo contra el cumplimiento de la labor de comunicar que lleva este medio artesanal, porque nunca ha aceptado pauta publicitaria oficial para evitar manejos en la publicación de información.
 
 				</h4>
 
