@@ -23,20 +23,43 @@
 
 
 				<h4 class="pi-margin-bottom-25 pi-weight-700 pi-letter-spacing">
-
-
-
+					Antecedentes cronologicos
 				</h4>
 
 				<br><br>
 				<div id="pi-footer-tweets"><ul class="pi-bullets-circle pi-bullets-base pi-bullets pi-list-big-margins">
+
+					<li>
+						<a href="http://www.virasorovirtual.com/articulos/show/cdor-martinez-formulo-descargo-sobre-los-cheques-robadosFriday24thJuly2015" target="_blank">
+						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						</span>
+								Cdor. Carlos Martinez (hoy Secretario de Hacienda) brindó las explicaciones de las acciones</a> <br>
+						<span class="pi-smaller-text pi-italic pi-text-opacity-50">24 de Julio de 2015</span>
+					</li>
+
+					<li>
+						<a href="http://www.digitalsantotome.com.ar/vernota.asp?id_noticia=7631" target="_blank">
+						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						</span>
+								Una verdera caja de pandora, Sabio en Santo Tome Digital</a> <br>
+						<span class="pi-smaller-text pi-italic pi-text-opacity-50">Digital Santo Tomé/span>
+					</li>
+
+					<li>
+						<a href="http://www.virasorovirtual.com/articulos/show/cheque-br-sabio-desnudo-la-verdadFriday23rdOctober2015" target="_blank">
+						<span class="pi-bullet-icon"><i class="icon-download"></i>
+						</span>
+								ROBO DE CHEQUES: SABIO DESNUDO LA VERDAD.
+							</a> <br>
+						<span class="pi-smaller-text pi-italic pi-text-opacity-50">23 de Octubre de 2015</span>
+					</li>
+
+
 					<li>
 						<a href="/cd_1_psk.pdf" target="_blank">
 						<span class="pi-bullet-icon"><i class="icon-download"></i>
 						</span>
-					Descarga las Carta documentos de la Intendente Pintos, su Vice Sabio y su Sec. Gob. Kaliniak a VirasoroVirtual.com. </a> <br>
-
-
+								Descarga las Carta documentos de la Intendente Pintos, su Vice Sabio y su Sec. Gob. Kaliniak a VirasoroVirtual.com. </a> <br>
 						<span class="pi-smaller-text pi-italic pi-text-opacity-50">Recibida el 3 de Marzo de 2016</span>
 					</li>
 
