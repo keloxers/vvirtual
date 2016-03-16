@@ -56,8 +56,8 @@ App::missing(function($exception)
 
 // Index
 Route::get( '/', array(
-		'as' => 'articulos.buscancallar',
-		'uses' => 'ArticulosController@buscancallar'
+		'as' => 'articulos.index',
+		'uses' => 'ArticulosController@index'
 ) );
 
 
