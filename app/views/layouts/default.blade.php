@@ -204,7 +204,7 @@
 @endif
 
 
-		<li><a href="http://vender.virasorovirtual.com">Clasificados</a></li>
+		<li><a href="http://www.clasificadosvirasoro">Clasificados</a></li>
 		<li><a href="/profesionales">Profesionales</a></li>
 
 
