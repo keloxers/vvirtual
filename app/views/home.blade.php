@@ -651,10 +651,7 @@ if ($turno) {
 			<div class="pi-section-w pi-center-text-xs pi-text-center">
 				<br>
 				<div align="center" >
-					<div id="cont_16c6d6472b04ecc46ddb420b74655790">
-					<span id="h_16c6d6472b04ecc46ddb420b74655790"><a id="a_16c6d6472b04ecc46ddb420b74655790" href="http://www.tiempo.com/" target="_blank" style="color:#656565;font-family:Arial;font-size:14px;">Predicci&oacute;n 14 d&iacute;as</a></span>
-					<script type="text/javascript" src="http://www.tiempo.com/wid_loader/16c6d6472b04ecc46ddb420b74655790"></script>
-					</div>
+					<div id="cont_45dad13cc976c360654861b1384f63e4"><script type="text/javascript" async src="https://www.tiempo.com/wid_loader/45dad13cc976c360654861b1384f63e4"></script></div>
 				</div>
 			</div>
 		</div>
