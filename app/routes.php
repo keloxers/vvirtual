@@ -44,6 +44,23 @@ Route::get('users/{id}/unban', 'UserController@unban')->where('id', '[0-9]+');
 Route::resource('users', 'UserController');
 
 
+
+
+
+				Route::get('/clientes', function () {
+
+				        $student = array (
+				            array("name" => "Marcos", "address" => "Lavalle 2805", "mobil" => "15610566"),
+				            array("name" => "Marcos", "address" => "Ocampo 990", "mobil" => "15610566"),
+				            array("name" => "Marcos", "address" => "Lavalle 1000", "mobil" => "15610566"),
+				            array("name" => "Marcos", "address" => "Lavalle 200", "mobil" => "15610566"),
+				            array("name" => "Marcos", "address" => "Artigas 2000", "mobil" => "15610566")
+				        );
+
+				        return response()->json($student);
+				});
+
+
 // Group Routes
 Route::resource('groups', 'GroupController');
 
@@ -351,20 +368,6 @@ Route::group(['prefix' => 'api', 'after' => 'allowOrigin'], function() {
 				});
 
 
-
-
-				Route::get('/clientesjson', function () {
-
-				        $student = array (
-				            array("name" => "Marcos", "address" => "Lavalle 2805", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Ocampo 990", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Lavalle 1000", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Lavalle 200", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Artigas 2000", "mobil" => "15610566")
-				        );
-
-				        return response()->json($student);
-				});
 
 
 
