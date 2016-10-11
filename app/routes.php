@@ -57,7 +57,8 @@ Route::resource('users', 'UserController');
 				            array("name" => "Marcos", "address" => "Artigas 2000", "mobil" => "15610566")
 				        );
 
-				        return response()->json($student);
+
+								return Response::json($student);
 				});
 
 
