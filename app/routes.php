@@ -50,11 +50,11 @@ Route::resource('users', 'UserController');
 				Route::get('/clientes', function () {
 
 				        $student = array (
-				            array("name" => "Marcos", "address" => "Lavalle 2805", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Ocampo 990", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Lavalle 1000", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Lavalle 200", "mobil" => "15610566"),
-				            array("name" => "Marcos", "address" => "Artigas 2000", "mobil" => "15610566")
+				            array("name" => "Kelo", "address" => "Lavalle 2805", "mobil" => "15610566"),
+				            array("name" => "Miguel", "address" => "Ocampo 990", "mobil" => "15610566"),
+				            array("name" => "Victor", "address" => "Lavalle 1000", "mobil" => "15610566"),
+				            array("name" => "Dario", "address" => "Lavalle 200", "mobil" => "15610566"),
+				            array("name" => "Walter", "address" => "Artigas 2000", "mobil" => "15610566")
 				        );
 
 
