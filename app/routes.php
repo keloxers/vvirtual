@@ -47,14 +47,14 @@ Route::resource('users', 'UserController');
 
 
 
-				Route::get('/clientes', function () {
+				Route::get('/api/alers', function () {
 
 				        $student = array (
-				            array("name" => "Kelo", "address" => "Lavalle 2805", "mobil" => "15610566"),
-				            array("name" => "Miguel", "address" => "Ocampo 990", "mobil" => "15610566"),
-				            array("name" => "Victor", "address" => "Lavalle 1000", "mobil" => "15610566"),
-				            array("name" => "Dario", "address" => "Lavalle 200", "mobil" => "15610566"),
-				            array("name" => "Walter", "address" => "Artigas 2000", "mobil" => "15610566")
+				            array("alert" => "Alert1", "mensaje" => "Mensaje uno de alerta test"),
+				            array("alert" => "Alert2", "mensaje" => "Mensaje dos de alerta test"),
+				            array("alert" => "Alert3", "mensaje" => "Mensaje tres de alerta test"),
+				            array("alert" => "Alert4", "mensaje" => "Mensaje cuatro de alerta test"),
+				            array("alert" => "Alert5", "mensaje" => "Mensaje cinco de alerta test")
 				        );
 
 
