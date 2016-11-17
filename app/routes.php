@@ -54,7 +54,7 @@ Route::resource('users', 'UserController');
 												foreach ($alertas as $alerta) {
 
 										    			$result[] = array(
-															    "alerta" => $alerta->alerta,
+															    "alert" => $alerta->alerta,
 															    "mensaje" => $alerta->mensaje
 															);
 												};
