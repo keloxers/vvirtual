@@ -48,17 +48,17 @@ Route::resource('users', 'UserController');
 
 
 				Route::get('/api/alerts', function () {
+												$alertas = DB::table('alertas')
+																					->orderBy('id', 'desc')->paginate(10);
+												$result  = array();
+												foreach ($alertas as $alerta) {
 
-				        $student = array (
-				            array("alert" => "Alert1", "mensaje" => "Mensaje uno de alerta test"),
-				            array("alert" => "Alert2", "mensaje" => "Mensaje dos de alerta test"),
-				            array("alert" => "Alert3", "mensaje" => "Mensaje tres de alerta test"),
-				            array("alert" => "Alert4", "mensaje" => "Mensaje cuatro de alerta test"),
-				            array("alert" => "Alert5", "mensaje" => "Mensaje cinco de alerta test")
-				        );
-
-
-								return Response::json($student);
+										    			$result[] = array(
+															    "alerta" => $alerta->alerta,
+															    "mensaje" => $alerta->mensaje
+															);
+												};
+												return Response::json($result);
 				});
 
 
@@ -91,6 +91,8 @@ Route::group(['before' => 'auth|standardUser'], function()
 
 
 	Route::resource('agendas', 'AgendasController');
+	Route::resource('alertas', 'AlertasController');
+	Route::get('/alertas/{id}/delete', 'AlertasController@destroy');
 
 		Route::resource('contactos', 'ContactosController');
 		Route::get('/contactos/{id}/delete', 'ContactosController@destroy');

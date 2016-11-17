@@ -180,6 +180,7 @@
 		<li><a href="{{ URL::to('/users') }}"><span>{{trans('pages.users')}}</span></a></li>
 		<li><a href="{{ URL::to('/groups') }}"><span>{{trans('pages.groups')}}</span></a></li>
 		<li><a href="/agendas"><span>Agenda</span></a></li>
+		<li><a href="/alertas"><span>Alertas</span></a></li>
 		<li><a href="/articulos/ver"><span>Articulos</span></a></li>
 		<li><a href="/banners"><span>Banners</span></a></li>
 		<li><a href="/clasificados"><span>Clasificados</span></a></li>
