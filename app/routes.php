@@ -47,7 +47,7 @@ Route::resource('users', 'UserController');
 
 
 
-				Route::get('/api/alers', function () {
+				Route::get('/api/alerts', function () {
 
 				        $student = array (
 				            array("alert" => "Alert1", "mensaje" => "Mensaje uno de alerta test"),
