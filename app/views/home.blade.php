@@ -276,7 +276,7 @@ if ($turno) {
 										<p>
 											<i class="icon-thumbs-up"></i>
 										</p>
-										<div class="pi-counter-number">{{$voto}} %</div>
+										<div class="lead-18">{{$voto}} %</div>
 
 									</div>
 									<p class="lead-18">{{$respuesta->respuesta}}</p>
