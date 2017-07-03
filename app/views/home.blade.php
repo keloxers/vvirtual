@@ -377,7 +377,7 @@ if ($turno) {
 										->where('posicion', '=', 'homeinterlinea')
 										->orderby('visitas')
 										->first();
-
+				if ($banners_hil) {
  ?>
 
 
@@ -394,7 +394,7 @@ if ($turno) {
 		$banners_hil = Banner::find($id);
 		$banners_hil->visitas = $banners_hil->visitas + 1;
 		$banners_hil->save();
-
+		}
  ?>
 
 
