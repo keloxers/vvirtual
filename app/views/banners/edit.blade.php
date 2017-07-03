@@ -100,10 +100,14 @@
 
               {{ Form::select('posicion', array(
               'homebig' => 'Home Big',
-              'homesmall' => 'Home Small',
-              'articulobig' => 'Articulo big',
-              'articulosmall' => 'Articulo Small'
-              ), $banner->posicion, array('class' => 'form-control input-lg', 'id' =>'posicion')) }}
+							'homesmall' => 'Home Small',
+							'homelateral' => 'Home Lateral',
+							'articulobig' => 'Articulo big',
+							'articulosmall' => 'Articulo Small',
+							'articuloslateral' => 'Articulo Lateral',
+							'homeinterlinea' => 'Home inter linea'
+              ),
+              $banner->posicion, array('class' => 'form-control input-lg', 'id' =>'posicion')) }}
 
           </div>
           <!-- End message form -->

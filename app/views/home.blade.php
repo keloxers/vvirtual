@@ -29,11 +29,6 @@
 <br>
 
 
-
-
-
-
-
 @if (count($articulo_tapa))
 
 <div class="tp-banner-container">
@@ -371,6 +366,42 @@ if ($turno) {
 						</div>
 					</div>
 				</div>
+
+				<div class="pi-col-xs-6 isotope-item">
+					<div class="pi-portfolio-item pi-portfolio-description-box pi-portfolio-item-round-corners">
+
+
+<?php
+
+				$banners_hil = DB::table('banners')
+										->where('posicion', '=', 'homeinterlinea')
+										->orderby('visitas')
+										->first();
+
+ ?>
+
+
+																		@if ($banners_hil->link <> "")
+																				<a href="{{ $banners_hil->link }}">
+																		@endif
+																		<img src="/publicidades/{{ $banners_hil->file }}" alt="">
+																		@if ($banners_hil->link <> "")
+																			</a>
+																		@endif
+
+<?php
+		$id = $banners_hil->id;
+		$banners_hil = Banner::find($id);
+		$banners_hil->visitas = $banners_hil->visitas + 1;
+		$banners_hil->save();
+
+ ?>
+
+
+
+
+			</div>
+		</div>
 
 				@endforeach
 
@@ -715,8 +746,6 @@ if ($turno) {
 					?>
 
 
-
-
 					<!-- Col 4 -->
 					<div class="pi-col-xs-3">
 
@@ -753,26 +782,6 @@ if ($turno) {
 			</div>
 		</div>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

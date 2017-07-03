@@ -42,7 +42,6 @@ class ArticulosController extends BaseController {
 										->where('posicion', '=', 'homelateral')
 										->get();
 
-
 				$clasificados = DB::table('clasificados')
 													->where('estado', '=', 'publicado')
 													->orderBy('id', 'desc')->paginate(30);
@@ -70,6 +69,7 @@ class ArticulosController extends BaseController {
 																				'clasificados' => $clasificados,
 																				'encuesta' => $encuesta,
 																				'respuestas' => $respuestas
+
 									));
 
 	}
