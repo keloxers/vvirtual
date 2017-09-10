@@ -175,11 +175,16 @@ class EncuestasController extends BaseController {
 			$auditoriavoto = new Auditoriavoto;
 
 			$ip = Auditoriavoto::get_client_ip();
+			$os = Auditoriavoto::get_client_os();
+			$browser = Auditoriavoto::get_client_browser();
+
 			$sess = Session::getId();
 
 			$auditoriavoto->ip = $ip;
 			$auditoriavoto->encuestas_id = $respuesta->encuestas_id;
 			$auditoriavoto->respuestas_id = $id;
+			$auditoriavoto->os = $os;
+			$auditoriavoto->browser = $browser;
 			$auditoriavoto->session = $sess;
 			$auditoriavoto->cookie = str_random(12);
 
