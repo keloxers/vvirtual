@@ -29,19 +29,96 @@
 <br>
 
 
-
+@if (count($articulo_tapa))
 
 <div class="tp-banner-container">
 <div class="tp-banner pi-revolution-slider" >
+<ul class="">
+
+<!-- SLIDE  -->
+
+@foreach ($articulo_tapa as $articulo)
+<?php
+$texto = $articulo->texto;
+$archivos = DB::table('archivos')
+->where('padre', '=', 'articulo')
+->where('padre_id', '=', $articulo->id)
+->first();
+
+if (preg_match('/^.{1,460}\b/s', $articulo->copete, $match))
+{ $texto = $match[0]; }
+$categoria = Categoria::find($articulo->categorias_id);
+?>
 
 
-	<div class="pi-row">
-		<div class="pi-section-w pi-center-text-xs pi-text-center">
-			<br><br>
-			<iframe width="728" height="410" src="https://www.youtube.com/embed/tr9evc_Jn6c" frameborder="0" allowfullscreen></iframe>
-		</div>
-	</div>
+<!-- SLIDE  -->
+<li data-transition="fade" data-slotamount="1" data-masterspeed="1500" >
+<!-- MAIN IMAGE -->
+<img src="/img_external/revolution-slider/back-2.jpg"  alt=""  data-bgfit="cover" data-bgposition="center top" data-bgrepeat="no-repeat">
+<!-- LAYERS -->
 
+
+@if (count($archivos)>0 )
+<!-- LAYER NR. 1 -->
+<div class="tp-caption sfb"
+	 data-x="583"
+	 data-y="60"
+	 data-speed="800"
+	 data-start="1500"
+	 data-easing="Power4.easeOut"
+	 data-endspeed="300"
+	 data-endeasing="Power1.easeIn"
+	 data-captionhidden="on"
+	 style="z-index: 1">
+	 <a href="/articulos/show/{{ $articulo->url_seo }}">
+		 <img src="/uploads/crop/{{ $archivos->archivo }}" alt="">
+	 </a>
+</div>
+@endif
+
+<!-- LAYER NR. 2 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="100"
+	 data-speed="500"
+	 data-start="2400"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 4; font-size: 36px; color: #fff; letter-spacing: -1px; text-shadow: 0 1px 0 rgba(0,0,0,0.2); font-weight: 300; line-height: 60px;">
+	 {{ $articulo->articulo }}
+</div>
+
+<!-- LAYER NR. 3 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="365"
+	 data-speed="500"
+	 data-start="2600"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 5; font-size: 18px; color: rgba(250,250,250,0.85); font-weight: 100; line-height: 28px;">
+	 {{ $texto }}
+</div>
+
+<!-- LAYER NR. 4 -->
+<div class="tp-caption sft str"
+	 data-x="45" data-hoffset="0"
+	 data-y="310"
+	 data-speed="500"
+	 data-start="2800"
+	 data-easing="Back.easeInOut"
+	 data-endspeed="300"
+	 style="z-index: 6;">
+	 <a href="/articulos/show/{{ $articulo->url_seo }}" class="btn pi-btn-turquoise">
+		<i class="icon-book-open pi-icon-left"></i> Leer
+	</a>
+</div>
+
+</li>
+
+@endforeach
+
+</ul>
 </div>
 </div>
 
@@ -49,6 +126,11 @@
 
 <!-- - - - - - - - - - END SECTION - - - - - - - - - -->
 
+
+
+
+
+@endif
 
 
 
