@@ -105,7 +105,10 @@
 
 		<!-- Phone -->
 		<div class="pi-header-block pi-header-block-txt">
-			<img src="/img/vvwhastsapp.png" alt=""></i> Whastapp red de noticias <strong>3756 610566</strong>
+			<audio controls preload="metadata" style=" width:200px;">
+	<source src="http://208.68.36.162:8000/fmlibre" type="audio/mpeg">
+	Tu navegador no soporta el audio en vivo de FMLibre 96.9
+</audio>
 		</div>
 		<!-- End phone -->
 
