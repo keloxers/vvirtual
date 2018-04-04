@@ -138,7 +138,7 @@
 		<!-- End social icons -->
 
 		<!-- Text -->
-		<div class="pi-header-block pi-header-block-txt pi-pull-right pi-hidden-xs">Seguinos:</div>
+		<div class="pi-header-block pi-header-block-txt pi-pull-right pi-hidden-xs"></div>
 		<!-- End text -->
 
 	</div>
