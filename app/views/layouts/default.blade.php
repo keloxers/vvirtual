@@ -103,10 +103,12 @@
 <div class="pi-section-w pi-section-header-w pi-section-dark pi-section-header-sm-w">
 	<div class="pi-section pi-section-header pi-section-header-sm pi-clearfix">
 
+<div class="pi-header-block pi-header-block-txt">
+	<img src="/img/logo_fmlibre.png" alt=""></i>
+	</div>
 		<!-- Phone -->
 		<div class="pi-header-block pi-header-block-txt">
-			<img src="/img/logo_fmlibre.png" alt="">
-			<audio controls preload="metadata" style=" width:100px;">
+			<audio controls preload="metadata" style=" width:200px;">
 	<source src="http://208.68.36.162:8000/fmlibre" type="audio/mpeg">
 	Tu navegador no soporta el audio en vivo de FMLibre 96.9
 </audio>
