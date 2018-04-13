@@ -109,7 +109,7 @@
 		<!-- Phone -->
 		<div class="pi-header-block pi-header-block-txt">
 			<audio controls preload="metadata" style=" width:200px;">
-	<source src="http://208.68.36.162:8000/fmlibre" type="audio/mpeg">
+	<source src="http://8.9.3.32:8000/fmlibre" type="audio/mpeg">
 	Tu navegador no soporta el audio en vivo de FMLibre 96.9
 </audio>
 		</div>
