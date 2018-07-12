@@ -438,6 +438,10 @@ class User extends Model implements UserInterface {
 	 */
 	public function checkResetPasswordCode($resetCode)
 	{
+		if ( ! $resetCode) {
+			return false;
+		}
+
 		return ($this->reset_password_code == $resetCode);
 	}
 
@@ -492,22 +496,22 @@ class User extends Model implements UserInterface {
 		return $this->userGroups;
 	}
 
-    /**
-     * Clear the cached permissions attribute.
-     */
-    public function invalidateMergedPermissionsCache()
-    {
+	/**
+	 * Clear the cached permissions attribute.
+	 */
+	public function invalidateMergedPermissionsCache()
+	{
 		$this->mergedPermissions = null;
-    }
+	}
 
-    /**
-     * Clear the cached user groups attribute.
-     */
-    public function invalidateUserGroupsCache()
-    {
+	/**
+	 * Clear the cached user groups attribute.
+	 */
+	public function invalidateUserGroupsCache()
+	{
 		$this->userGroups = null;
-    }
-    
+	}
+
 	/**
 	 * Adds the user to the given group.
 	 *
@@ -630,12 +634,7 @@ class User extends Model implements UserInterface {
 	{
 		$mergedPermissions = $this->getMergedPermissions();
 
-		if ( ! is_array($permissions))
-		{
-			$permissions = (array) $permissions;
-		}
-
-		foreach ($permissions as $permission)
+		foreach ((array) $permissions as $permission)
 		{
 			// We will set a flag now for whether this permission was
 			// matched at all.

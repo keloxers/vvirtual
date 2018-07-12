@@ -441,6 +441,10 @@ class User extends \ORM implements UserInterface {
 	 */
 	public function checkResetPasswordCode($resetCode)
 	{
+		if ( ! $resetCode) {
+			return false;
+		}
+
 		return ($this->reset_password_code == $resetCode);
 	}
 
@@ -605,12 +609,7 @@ class User extends \ORM implements UserInterface {
 	{
 		$mergedPermissions = $this->getMergedPermissions();
 
-		if ( ! is_array($permissions))
-		{
-			$permissions = (array) $permissions;
-		}
-
-		foreach ($permissions as $permission)
+		foreach ((array) $permissions as $permission)
 		{
 			// We will set a flag now for whether this permission was
 			// matched at all.
